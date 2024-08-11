@@ -11,4 +11,6 @@ public class BaseClass {
 	public LoginPage lp;
 	public ContactPage_R4C_CaseCreation contacts;
 	public WebDriver driver;
+	
+	
 }

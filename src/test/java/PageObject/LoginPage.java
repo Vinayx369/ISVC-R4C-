@@ -12,7 +12,7 @@ import Utilities.WaitHelper;
 public class LoginPage {
 	public WebDriver ldriver;
 	public WebDriver driver;
-    private WaitHelper waitHelper;
+    public WaitHelper waitHelper;
 
 	//private WebDriver rdriver;
 	public LoginPage(WebDriver rdriver) {
@@ -43,11 +43,12 @@ public class LoginPage {
 	
 	
 	public void SetUserName(String uname) {
-        waitHelper.waitForElement(textEmail, Duration.ofSeconds(15));
+        waitHelper.waitForElement(textEmail, Duration.ofSeconds(10));
 		textEmail.sendKeys(uname);
 	}
 	public void SetPassword(String Password) {
 		textPassword.sendKeys(Password);
+        waitHelper.waitForElement(textEmail, Duration.ofSeconds(10));
 	}
 
 	public void Clickonlogin() {
