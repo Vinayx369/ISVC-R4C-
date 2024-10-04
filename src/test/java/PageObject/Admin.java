@@ -43,11 +43,18 @@ public class Admin {
 
 	}
 
-	@FindBy(xpath = "//span[contains(text(),'Admin')]")
+	@FindBy(xpath = "//span[@part='label'][normalize-space()='Admin']/..//span[@part='indicator']")
 	WebElement SelectServiceTypeAdmin;
 
 	public void SelectServiceTypeAdmin() {
-		commonclick.scrollAndClick(SelectServiceTypeAdmin);
+		try {
+			Thread.sleep(2000);
+			commonclick.scrollAndClick(SelectServiceTypeAdmin);
+
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@FindBy(xpath = "//span[@title='Duplicate order']")

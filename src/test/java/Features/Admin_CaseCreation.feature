@@ -42,12 +42,13 @@ Feature: Admin Case Creation
    And Select Purchase/Sales Order button and Enter PO Number Through Excel
    Then Click on the search button
    And Select All Line items
+   And Select First Item
     And Click on the Next button after All Line Items
    When Enter Return Quantity
    And Click on the Get credit price button 
    And Click on the Save and Summary button
     And Click on submit button After Summary
-    And Print Case No into Console SR
+    #And Print Case No into Console SR
     And Close browser
     
  @TestCaseNo2
@@ -81,8 +82,8 @@ Feature: Admin Case Creation
    And Select Fright Type IMF
    #And Select Fright Type CMF
    And Select Return customer contact first
-  # And Select CA Address first
-  # When select Collection Contact first
+  And Select CA Address first
+  When select Collection Contact first
    And Click on next
    #And Select Purchase/Sales Order button and Enter SO Number "0019151855"
    And Select Purchase/Sales Order button and Enter SO Number through Excel
@@ -132,7 +133,7 @@ Feature: Admin Case Creation
   # And Click on the Get credit price button
     And Click on the Save and Summary button
     And Click on submit button After Summary
-    And Print Case No into Console SR
+  #And Print Case No into Console SR
     And Close browser
     
     
@@ -153,11 +154,19 @@ Feature: Admin Case Creation
    And Select RCA address first
    And Select Fright Type IMF
    And Select Return customer contact first
-  # And Select CA Address first
-  # When select Collection Contact first
+  And Select CA Address first
+  When select Collection Contact first
    And Click on next
    And Upload Bulk File With MM IDS "Path"
    And Click On Validate Button
+   And Clickon PO History
+   And Click on the Get credit price button
+ And Click on the Save and Summary button
+ And Click on submit button After Summary
+ And Close browser
+ 
+   
+   
    
  @TestCaseNo5
  Scenario: Verify the Case creation for Admin & Return Reason as Shortship with Freight type as IMF using CPN Search
@@ -221,7 +230,7 @@ And Print Case No into Console SR
 
 
  @TestCaseNo8
- Scenario: Verify the Case creation for Admin & Return Reason as Wrong Ship date with Freight type as CRF using Bulk Upload
+Scenario: Verify the Case creation for Admin & Return Reason as Wrong Ship date with Freight type as CRF using Bulk Upload
 Given User Launch Chrome browser
 When User open URL 
 Then User Enter Email Address and pass PassWord
@@ -240,11 +249,11 @@ And Click on next
 And Upload Bulk File With MM IDS "Path"
 And Click On Validate Button
 And Clickon PO History
-When Enter Return Quantity
+#When Enter Return Quantity
 And Click on the Get credit price button
 And Click on the Save and Summary button
 And Click on submit button After Summary
-And Print Case No into Console SR
+#And Print Case No into Console SR
 
 
 @TestCaseNo9
@@ -308,6 +317,72 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
     And Print Case No into Console SR
    And Close browser
    
+   @TestCaseNo11
+ Scenario: Verify the Open Unsubmitted status Case Edit for Admin with Freight type as CRF
+   Given User Launch Chrome browser
+   When User open URL 
+   Then User Enter Email Address and pass PassWord
+   And Click on login
+   And Enter text global excel
+   And Click on the New R4C case creation button
+   And Select Service Type Admin and Click create button enter Sold through Excel file
+   And Select All other detils
+   And Select Ship To contact
+   And Select credit
+   And Select Return Reson Incorrect labeling
+    And Enter CIRS Through Excel
+   And Select RCA address first
+   And Select Fright Type CMF
+   And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
+   When Click on Save for later button
+   And Click On Edit Option
+   And Select Purchase/Sales Order button and Enter PO Number Through Excel
+   Then Click on the search button
+   And Select All Line items
+   And Select First Item
+    And Click on the Next button after All Line Items
+   When Enter Return Quantity
+   And Click on the Get credit price button 
+   And Click on the Save and Summary button
+    And Click on submit button After Summary
+    #And Print Case No into Console SR
+    And Close browser
+   
+   @TestCaseNo12
+ Scenario: Verify the Open Unsubmitted status Case Edit for Admin with Freight type as CRF
+   Given User Launch Chrome browser
+   When User open URL 
+   Then User Enter Email Address and pass PassWord
+   And Click on login
+   And Enter text global excel
+   And Click on the New R4C case creation button
+   And Select Service Type Admin and Click create button enter Sold through Excel file
+   And Select All other detils
+   And Select Ship To contact
+   And Select credit
+   And Select Return Reson Incorrect labeling
+    And Enter CIRS Through Excel
+   And Select RCA address first
+   And Select Fright Type IMF
+   And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
+   When Click on Save for later button
+    And Click On Edit Option
+  And Select Purchase/Sales Order button and Enter PO Number Through Excel
+   Then Click on the search button
+   And Click on next button
+   And Select All Line items
+   And Select First Item
+    And Click on the Next button after All Line Items
+   When Enter Return Quantity
+   And Click on the Get credit price button 
+   And Click on the Save and Summary button
+    And Click on submit button After Summary
+    #And Print Case No into Console SR
+    And Close browser
    
 @TestCaseNo13
 @Sanity
@@ -371,6 +446,8 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
    And Select RCA address first
    And Select Fright Type IMF
    And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
    And Click on next
    And Enter MMIDs By using Excel Sheet
    And Click on search button after Entering MM Number
@@ -429,6 +506,9 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
    And Select Return overship
    And Enter CIRS Through Excel
    And Select RCA address first
+   And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
    And Select Fright Type IMF
    And Select Return customer contact first
    And Click on next
@@ -451,6 +531,8 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
    And Select RCA address first
    And Select Fright Type IMF
    And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
    And Click on next
    And Enter MMIDs By using Excel Sheet
    And Click on search button after Entering MM Number
@@ -458,7 +540,7 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
    And Clickon PO History
    
 @TestCaseNo20
- Scenario: 
+ Scenario: Verify the Price Override functionality 
    Given User Launch Chrome browser
    When User open URL 
    Then User Enter Email Address and pass PassWord
@@ -481,9 +563,9 @@ Scenario: Verify the Case creation for Admin & Return Reason as Mixed Product wi
    And Select All Line items with RM
    And Clickon PO History
   #When Click on Next After PO history check
- #When Enter Return Quantity
- When Enter Quantity into All fields
- #And Click on the Get credit price
+  #When Enter Return Quantity
+  When Enter Quantity into All fields
+  #And Click on the Get credit price
   And Click on the Get credit price button
    And Enter Credit price
    And Enter Credit price Zero

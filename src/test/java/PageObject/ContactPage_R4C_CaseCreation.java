@@ -430,8 +430,9 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void clickonsearch() {
-		waitUtils.waitForElementToBeClickable(Clickonsearch, 30);
-		Clickonsearch.click();
+		//waitUtils.waitForElementToBeClickable(Clickonsearch, 30);
+		commonclick.scrollAndClick(Clickonsearch);
+		//Clickonsearch.click();
 	}
 
 	public void selectallcheckbox() {
@@ -854,7 +855,7 @@ public class ContactPage_R4C_CaseCreation {
 		// Loop through each input field and enter the value "1"
 		for (WebElement inputField : decimalInputFields) {
 			inputField.clear(); // Optional: clear any existing value
-			inputField.sendKeys("1"); // Enter the value "100"
+			inputField.sendKeys("5"); // Enter the value "100"
 		}
 
 	}

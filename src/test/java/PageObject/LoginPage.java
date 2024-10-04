@@ -1,17 +1,21 @@
 package PageObject;
 
 import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import Utilities.Baseclass1;
 import Utilities.WaitHelper;
 import utils.CommonUtils;
 import utils.WaitUtils;
 
-public class LoginPage {
+public class LoginPage extends Baseclass1 {
 	public WebDriver ldriver;
 	public WebDriver driver;
 	public WaitHelper waitHelper;
@@ -95,8 +99,20 @@ public class LoginPage {
 
 		//loginButton.click();
 	}
-	
-	
+public void enterCredentialsAndLogin() throws Exception {
+        String decryptedUsername = getDecryptedUsername();
+        String decryptedPassword = getDecryptedPassword();
+ 
+        // Mask the entered credentials with asterisks on the webpage (if you want to simulate)
+       // String maskedPassword = decryptedPassword.replaceAll(".", "*");
+ 
+        // Enter username and password
+        emailField.sendKeys(decryptedUsername);
+        passwordField.sendKeys(decryptedPassword); // Use masked password for display
+ 
+        // Click login
+       // loginButton.click();
+    }
 	
 	
 	

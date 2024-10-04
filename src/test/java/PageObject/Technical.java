@@ -184,6 +184,7 @@ public class Technical {
 	@FindBy(xpath = "/html[1]/body[1]/div[4]/div[1]/section[1]/div[1]/div[1]/div[2]/div[2]/section[8]/div[1]/div[1]/section[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/one-record-home-flexipage2[1]/forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-r4-c_-case_-record_-page___-case___-v-i-e-w[1]/forcegenerated-flexipage_r4c_case_record_page_case__view_js[1]/record_flexipage-desktop-record-page-decorator[1]/div[1]/records-record-layout-event-broker[1]/slot[1]/slot[1]/flexipage-record-home-template-desktop2[1]/div[1]/div[2]/div[1]/slot[1]/flexipage-component2[1]/slot[1]/flexipage-tabset2[1]/div[1]/lightning-tabset[1]/div[1]/slot[1]/slot[1]/flexipage-tab2[1]/slot[1]/flexipage-component2[2]/slot[1]/records-lwc-detail-panel[1]/records-base-record-form[1]/div[1]/div[1]/div[1]/div[1]/records-lwc-record-layout[1]/forcegenerated-detailpanel_case___0124u0000003attqam___full___view___recordlayout2[1]/records-record-layout-block[1]/slot[1]/records-record-layout-section[1]/div[1]/div[1]/dl[1]/slot[1]/records-record-layout-row[2]/slot[1]/records-record-layout-item[2]/div[1]/div[1]/dd[1]/div[1]/span[1]/slot[1]/records-record-type[1]/div[1]/div[1]")
 	WebElement CaseType;
 	@FindBy(xpath = "(//label[text()='Sold To']/following-sibling::div//input)[1]")
+	//@FindBy(xpath = "(//div[@part=\"input-container\"]//input[@placeholder='Select one'])[1]")
 	WebElement EnterSoldto; // Enter Sold To id into fields
 
 	@FindBy(xpath = "//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']")
@@ -375,6 +376,7 @@ public class Technical {
 
 		// ClickOnNPR.click();
 	}
+	
 
 	public void SelectReason() {
 		// waitUtils.waitForElementToBeClickable(SelectReasin, 30);
@@ -559,7 +561,7 @@ public class Technical {
 			}
 			while (iterator.hasNext()) {
 				Row currentRow = iterator.next();
-				Cell cell = currentRow.getCell(3); // Only get the first column (index 0)
+				Cell cell = currentRow.getCell(2); // Only get the first column (index 0)
 
 				if (cell != null) {
 					String cellValue = "";
@@ -608,7 +610,6 @@ public class Technical {
 		ClickMMTextbox.sendKeys(allValues);
 
 	}
-	
 	
 
 	public void EnterULTs() throws InterruptedException {
@@ -676,6 +677,9 @@ public class Technical {
 		}
 //Thread.sleep(3000);
 	}
+	
+	
+	
 
 	public void SelectRCAOptinOut() {
 		commonclick.scrollAndClick(SelectRCAOptinOut);
@@ -733,6 +737,7 @@ public class Technical {
 					// Enter the third column data into the global text field
 					if (!thirdColumnData.isEmpty()) {
 						// clickGlobal.click();
+						commonclick.scrollAndClick(EnterTextGlobalfield);
 						EnterTextGlobalfield.clear(); // Clear any existing value
 						EnterTextGlobalfield.sendKeys(thirdColumnData); // Enter the third column data
 					}
@@ -874,10 +879,14 @@ public class Technical {
 
 					System.out.println("Third column data: " + thirdColumnData);
 
-					// Enter the third column data into the global text field
 					if (!thirdColumnData.isEmpty()) {
 						// clickGlobal.click();
-						EnterSoldto.clear(); // Clear any existing value
+						//EnterSoldto.clear(); // Clear any existing value
+						commonclick.scrollAndClick(EnterSoldto);
+						//EnterSoldto.clear(); // Clear any existing value
+						// Use JavascriptExecutor to set the value in the text field
+	                   // JavascriptExecutor js = (JavascriptExecutor) driver;
+	                  //  js.executeScript("arguments[0].value=arguments[1];", EnterSoldto, thirdColumnData);
 						EnterSoldto.sendKeys(thirdColumnData); // Enter the third column data
 					}
 				}
@@ -973,6 +982,16 @@ public class Technical {
 		SelectSoldToContact.click();
 		
 	}
+	@FindBy(xpath="//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']")
+	WebElement  selectSoldtoOption;
+	public void selectSoldtoOption() 
+	{
+		commonclick.scrollAndClick(selectSoldtoOption);
+		
+	}
+	
+	
+	
 	
 	
 }

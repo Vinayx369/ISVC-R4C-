@@ -12,7 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.interactions.Actions;
-
+import PageObject.Exceptions;
 import PageObject.Admin;
 import PageObject.ContactPage_R4C_CaseCreation;
 import PageObject.Technical;
@@ -40,6 +40,7 @@ public class Steps extends BaseClass  {
 	public Technical Technical;
 	public Quality quality;
 	public Admin admin;
+	public Exceptions exceptions;
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
 		ChromeOptions options = new ChromeOptions();
@@ -1127,6 +1128,9 @@ public class Steps extends BaseClass  {
 		upload.keyRelease(KeyEvent.VK_ENTER);
 
 	}
+	
+	
+	
 
 	@When("Upload Bulk File {string} quality MMCPN")
 	public void upload_bulk_file_quality_mmcpn(String string) throws InterruptedException, AWTException {
@@ -1583,6 +1587,17 @@ public class Steps extends BaseClass  {
 	}
 	
 	
+	
+	@Then("User Enter Email Address and pass PassWord Encripted")
+	public void user_enter_email_address_and_pass_pass_word_encripted() throws Exception {
+		lp = new LoginPage(driver);
+lp.enterCredentialsAndLogin();
+       // loginPage.enterCredentialsAndLogin();
+
+
+
+	}
+	
 	@When("Check Status Open Unsubmitted")
 	public void check_status_open_unsubmitted() throws InterruptedException {
 		// Thread.sleep(4000);
@@ -1648,17 +1663,81 @@ public class Steps extends BaseClass  {
 		admin.SelectServiceTypeAdmin();
 		contacts.clickoncreatebutton();
 		Technical = new Technical(driver);
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		Technical.enterSlodToExcel();
 		Thread.sleep(2000);
+		//Technical.selectSoldtoOption();
 		driver.findElement(
 				By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
 				.click();
 
 	}
+	
+	@Then("Select Service Type Exception and Click create button enter Sold through Excel file")
+	public void select_service_type_exception_and_click_create_button_enter_sold_through_excel_file() throws InterruptedException {
+	    
+		exceptions=new Exceptions(driver);
+		Thread.sleep(2000);
+		exceptions.SelectServiceTypeException();
+		
+		contacts.clickoncreatebutton();
+		Technical = new Technical(driver);
+		//Thread.sleep(2000);
+		Technical.enterSlodToExcel();
+		Thread.sleep(2000);
+		//Technical.selectSoldtoOption();
+		driver.findElement(
+				By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
+				.click();
+
+		
+	
+		
+	}
+	@Then("Select Exception Return Reason")
+	public void select_exception_return_reson() {
+		
+		Technical.SelectReason();
+		exceptions.ExceptionReturn();
+		
+	    
+	}
+	
+	@Then("Select GRL Exception Reason")
+	public void select_grl_exception_reason() {
+		Technical.SelectReason();
+		exceptions.SelectGRLException();
+		
+		
+	}
+	@Then("Select Quarterly Exception")
+	public void select_quarterly_exception() {
+		Technical.SelectReason();
+		exceptions.QuaterlyException();
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Then("Enter Justification")
+	public void enter_justification() {
+		exceptions.Justification(); 
+	}
+	
+	
+	
+	
+	
+	
 
 //Select First Address for all
-
 	@Then("Select RCA address first")
 	public void select_rca_address_first() throws InterruptedException {
 		// Thread.sleep(4000);
@@ -1770,6 +1849,11 @@ public class Steps extends BaseClass  {
 		driver.findElement(
 				By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
 				.click();
+	}
+	@Then("Select credit NPR")
+	public void select_credit_npr() {
+		Technical.SelectNPR();
+		Technical.ClickOnNPR();
 	}
 
 	@Then("Select Remedy and reason")
@@ -1955,6 +2039,7 @@ public class Steps extends BaseClass  {
 		Technical = new Technical(driver);
 		Technical.SelectReason();
 		admin.SelectReasonDuplicateOrder();
+		contacts.ClickOnCancel();
 
 	}
 
@@ -1977,6 +2062,8 @@ public class Steps extends BaseClass  {
 	public void select_return_overship() {
 		Technical.SelectReason();
 		admin.SelectOvership();
+		contacts.clickok();
+		
 	}
 
 	@Then("Select Return Reson dsample")
@@ -1989,6 +2076,7 @@ public class Steps extends BaseClass  {
 	public void select_return_shortship() {
 		Technical.SelectReason();
 		admin.SelectShortship();
+		contacts.ClickOnCancel();
 	}
 
 	@Then("Select Return Reson Wrong Dest")
@@ -2001,6 +2089,7 @@ public class Steps extends BaseClass  {
 	public void select_return_reson_wrong_product() {
 		Technical.SelectReason();
 		admin.SelectWrongProduct();
+		contacts.ClickOnCancel();
 	}
 
 	@Then("Select Wrong Ship Date")
@@ -2030,5 +2119,44 @@ public class Steps extends BaseClass  {
 	public void click_on_the_get_credit_price_button() {
 		contacts.ClickGetCreditPrice();
 	}
+	
+	//Exception--------------------------------
+	
+	@When("Select Box Condition")
+	public void select_box_condition() {
+	   exceptions.SelectBoxCondition();
+	}
 
+	@When("Upload Bulk File With MM IDS {string} Exception")
+	public void upload_bulk_file_with_mm_ids_exception(String string) throws InterruptedException, AWTException {
+	    
+		
+		Thread.sleep(2000);
+		contacts.ClickonBulkUpload();
+		Thread.sleep(2000);
+		contacts.clickonUploadfileButton(string);
+		Thread.sleep(3000);
+		Robot upload = new Robot();
+		upload.delay(2000);
+		StringSelection stringSelection = new StringSelection("C:\\Users\\oyadavx\\OneDrive - Intel Corporation\\Desktop\\Automation Test Data\\Exception Bulk Upload\\MMCPN_BulkUploadT_Exception.csv"
+				);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		upload.keyPress(KeyEvent.VK_CONTROL); // Key Press On key Board
+		upload.keyPress(KeyEvent.VK_V);
+		upload.delay(2000);
+		upload.keyRelease(KeyEvent.VK_CONTROL);
+		upload.keyRelease(KeyEvent.VK_V);
+		upload.delay(2000);
+		upload.keyPress(KeyEvent.VK_ENTER);
+		upload.keyRelease(KeyEvent.VK_ENTER);
+		
+		
+		
+	}
+	
+	@When("Enter ULTs from Excel")
+	public void enter_ul_ts_from_excel() throws InterruptedException {
+	    Technical.EnterULTs();
+	}
+	
 }

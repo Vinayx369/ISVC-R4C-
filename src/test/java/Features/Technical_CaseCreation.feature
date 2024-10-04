@@ -1,6 +1,6 @@
 Feature: Case Creation Workflow for Technical Service Type with Credit Remedy and Specific Return Reason Using PO Search
 @ScenarioNo-1
-@Sanity
+@Sanity11
 Scenario: Verify the Case creation for Service Type as Technical & Remedy as Credit & Return Reason as Failed at Customer Factory Site using PO Search
    Given User Launch Chrome browser
    When User open URL 
