@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\oyadavx\AppData\Local\Temp\testng-eclipse-180104204\testng-customsuite.xml</span>
+                    <span>C:\Users\oyadavx\AppData\Local\Temp\testng-eclipse--1131881323\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -130,15 +130,15 @@
                   </a> <!-- runScenario("Verify the PO History functionality for Remedy as Credit", "Exception Case Creation") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Verify the PO History functionality for Remedy as Credit","Exception Case Creation")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li[@role=&apos;option&apos;]//lightning-primitive-icon[@exportparts=&apos;icon&apos;]//*[name()=&apos;svg&apos;]&quot;}
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=129.0.6668.89)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.4&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [871cc57201242b5ce65198be88554861, findElement {using=xpath, value=//li[@role=&apos;option&apos;]//lightning-primitive-icon[@exportparts=&apos;icon&apos;]//*[name()=&apos;svg&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58521}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58521/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 871cc57201242b5ce65198be88554861
+Command: [3eb72233db09733e2e4599554499e6b1, findElement {using=xpath, value=//input[@placeholder=&quot;Enter the MM&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49901}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49901/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3eb72233db09733e2e4599554499e6b1
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -153,8 +153,12 @@ Session ID: 871cc57201242b5ce65198be88554861
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at StepDefination.Steps.select_service_type_exception_and_click_create_button_enter_sold_through_excel_file(Steps.java:1689)
-	at ✽.Select Service Type Exception and Click create button enter Sold through Excel file(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Exception_CaseCreation.feature:318)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
+	at PageObject.Technical.ClickMMTextbox(Technical.java:610)
+	at StepDefination.Steps.enter_mmi_ds_by_using_excel_sheet(Steps.java:1513)
+	at ✽.Enter MMIDs By using Excel Sheet(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Exception_CaseCreation.feature:330)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -166,7 +170,7 @@ Session ID: 871cc57201242b5ce65198be88554861
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\oyadavx\AppData\Local\Temp\testng-eclipse-180104204\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\oyadavx\AppData\Local\Temp\testng-eclipse--1131881323\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -227,12 +231,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'TestRunner.TestRunner$CucumberTest')
-data.setCell(0, 3, 77068);
+data.setCell(0, 3, 246570);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -260,18 +264,18 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">TestRunner.TestRunner$CucumberTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@5c316230)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@583b4af4)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Verify the PO History functionality for Remedy as Credit", "Exception Case Creation")</span>
-                <span class="method-start">796 ms</span>
+                <span class="method-start">714 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">77895 ms</span>
+                <span class="method-start">247332 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

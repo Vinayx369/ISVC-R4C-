@@ -2,26 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-06T12:06:00 IST" name="Default suite" finished-at="2024-10-06T12:07:22 IST" duration-ms="82062">
+  <suite started-at="2024-10-06T12:19:51 IST" name="Default suite" finished-at="2024-10-06T12:24:04 IST" duration-ms="252849">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-10-06T12:06:00 IST" name="Default test" finished-at="2024-10-06T12:07:22 IST" duration-ms="82062">
+    <test started-at="2024-10-06T12:19:51 IST" name="Default test" finished-at="2024-10-06T12:24:04 IST" duration-ms="252849">
       <class name="TestRunner.TestRunner$CucumberTest">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:06:00 IST" name="setUpClass" finished-at="2024-10-06T12:06:01 IST" duration-ms="784" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:19:51 IST" name="setUpClass" finished-at="2024-10-06T12:19:52 IST" duration-ms="703" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c316230]]>
+                <![CDATA[org.testng.TestRunner@583b4af4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:06:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-06T12:07:18 IST" duration-ms="77068" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:19:52 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-06T12:23:59 IST" duration-ms="246570" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -34,28 +34,28 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"}
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=129.0.6668.89)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [871cc57201242b5ce65198be88554861, findElement {using=xpath, value=//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58521}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58521/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 871cc57201242b5ce65198be88554861]]>
+Command: [3eb72233db09733e2e4599554499e6b1, findElement {using=xpath, value=//input[@placeholder="Enter the MM"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49901}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49901/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3eb72233db09733e2e4599554499e6b1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"}
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=129.0.6668.89)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [871cc57201242b5ce65198be88554861, findElement {using=xpath, value=//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58521}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58521/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 871cc57201242b5ce65198be88554861
+Command: [3eb72233db09733e2e4599554499e6b1, findElement {using=xpath, value=//input[@placeholder="Enter the MM"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.89, chrome: {chromedriverVersion: 129.0.6668.89 (951c0b97221f..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49901}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49901/devtoo..., se:cdpVersion: 129.0.6668.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3eb72233db09733e2e4599554499e6b1
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -70,15 +70,19 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-at StepDefination.Steps.select_service_type_exception_and_click_create_button_enter_sold_through_excel_file(Steps.java:1689)
-at ✽.Select Service Type Exception and Click create button enter Sold through Excel file(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Exception_CaseCreation.feature:318)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy25.sendKeys(Unknown Source)
+at PageObject.Technical.ClickMMTextbox(Technical.java:610)
+at StepDefination.Steps.enter_mmi_ds_by_using_excel_sheet(Steps.java:1513)
+at ✽.Enter MMIDs By using Excel Sheet(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Exception_CaseCreation.feature:330)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:07:18 IST" name="tearDownClass" finished-at="2024-10-06T12:07:22 IST" duration-ms="4126" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner.TestRunner$CucumberTest@1dac5ef]" started-at="2024-10-06T12:23:59 IST" name="tearDownClass" finished-at="2024-10-06T12:24:04 IST" duration-ms="5453" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
