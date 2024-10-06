@@ -8,7 +8,7 @@ public class TestRunner {
 	@CucumberOptions(features = "C:\\Users\\oyadavx\\git\\Intel_ISVC_R4C\\Intel_ISVC_R4C\\src\\test\\java\\Features\\Exception_CaseCreation.feature",
 
 			glue = "StepDefination",
-			tags = "@TestCaseNo18",
+			tags = "@TestCaseNo13",
 			monochrome = true, 
 			dryRun = false, 
 			plugin = { "pretty",

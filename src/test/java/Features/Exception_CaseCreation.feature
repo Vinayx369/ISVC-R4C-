@@ -306,6 +306,29 @@ Given User Launch Chrome browser
    And Upload Bulk File With MM IDS "C:\\Users\\oyadavx\\OneDrive - Intel Corporation\\Desktop\\Automation Test Data\\Exception Bulk Upload\\MMCPN_BulkUploadT_Exception.csv" Exception
    And Click On Validate Button
    
+  
+    @TestCaseNo13
+Scenario: Verify the PO History functionality for Remedy as Credit
+Given User Launch Chrome browser
+   When User open URL 
+   Then User Enter Email Address and pass PassWord
+   And Click on login
+   And Enter text global excel
+   And Click on the New R4C case creation button
+   And Select Service Type Exception and Click create button enter Sold through Excel file
+   And Select All other detils
+   And Select Ship To contact
+   And Select credit
+    And Select GRL Exception Reason
+   Then Enter Justification
+   And Select RCA address first
+   And Select Fright Type IMF
+   And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
+   And Click on next
+   And Enter MMIDs By using Excel Sheet
+   And Click on search button after Entering MM Number
    
    @TestCaseNo14
 Scenario: Verify the PO History functionality for Remedy as NPR-Credit
@@ -329,6 +352,8 @@ Given User Launch Chrome browser
  When Enter Quantity into All fields
  When Click On Warranty Entitlement Check
  And Click on next
+ And Enter MMIDs By using Excel Sheet
+   And Click on search button after Entering MM Number
  And Clickon PO History check button
  
   @TestCaseNo15
