@@ -264,13 +264,13 @@ public class Steps extends BaseClass  {
 
 	@When("Enter Credit price")
 	public void enter_credit_price() throws InterruptedException {
-		contacts.EnterPriceZero();
+		contacts.EnterPrice();
 		contacts.entertextintoreasonfield();
 	}
 
 	@When("Enter Credit price Zero")
 	public void enter_credit_price_zero() {
-
+		contacts.EnterPriceZero();
 		contacts.entertextintoreasonfield();
 	}
 
@@ -856,7 +856,7 @@ public class Steps extends BaseClass  {
 
 	@When("Click On Edit Option")
 	public void click_on_edit_option() throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 //		try {
 //			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); // Create a WebDriverWait object
 //			WebElement element = wait
@@ -872,7 +872,7 @@ public class Steps extends BaseClass  {
 //		} finally {
 //			//System.out.println("Element still not clickable");
 //		}
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		contacts.ClickEdit();
 	}
 
@@ -1468,6 +1468,8 @@ public class Steps extends BaseClass  {
 		Thread.sleep(2000);
 		contacts.SelectGlobalsearch();
 		Thread.sleep(1000);
+		
+		
 	}
 
 	@Then("Select Contact from list and enter Case no into search field {string}")
@@ -1841,6 +1843,32 @@ lp.enterCredentialsAndLogin();
 
 	}
 
+@Then("Select Service Type Quality and Click create button enter Sold through Excel file")
+public void select_service_type_quality_and_click_create_button_enter_sold_through_excel_file() throws InterruptedException {
+	Thread.sleep(3000);
+	quality = new Quality(driver);
+	quality.SelectServiceTypeQuality();
+	Thread.sleep(3000);
+	contacts.clickoncreatebutton();
+	//Thread.sleep(2000);
+	Technical = new Technical(driver);
+	//Thread.sleep(2000);
+	Technical.enterSlodToExcel();
+	Thread.sleep(2000);
+	//Technical.selectSoldtoOption();
+	driver.findElement(
+			By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
+			.click();
+	
+	
+	
+	
+	
+	
+}
+
+	
+	
 	@Then("Enter SoldTo and select {string}")
 	public void enter_sold_to_and_select(String string) throws InterruptedException {
 		Thread.sleep(2000);
@@ -1928,6 +1956,17 @@ lp.enterCredentialsAndLogin();
 	public void enter_mrb_into_all_fields(String string) {
 		quality.EnterMRBIntoAllfields(string);
 	}
+	
+	@When("Enter MRB into All fields through Excel")
+	public void enter_mrb_into_all_fields_through_excel() {
+
+		exceptions=new Exceptions(driver);
+		exceptions.EnterMRB();	
+		
+	}
+
+	
+	
 
 	@Then("Select All other detils")
 	public void select_all_other_detils() {

@@ -45,6 +45,38 @@ public class Admin {
 
 	@FindBy(xpath = "//span[@part='label'][normalize-space()='Admin']/..//span[@part='indicator']")
 	WebElement SelectServiceTypeAdmin;
+	@FindBy(xpath = "//span[@title='Duplicate order']")
+	WebElement SelectReasonDuplicateOrder;
+	@FindBy(xpath = "//span[@title='Incorrect Labeling']")
+	WebElement SelectReasonIncorrectLabeling;
+	@FindBy(xpath = "//span[@title='Mixed Product']")
+	WebElement SelectMixedProduct;
+	@FindBy(xpath = "//span[@title='Overship']")
+	WebElement SelectOvership;
+	@FindBy(xpath = "//span[@title='Sample']")
+	WebElement Sample;
+	@FindBy(xpath = "//span[@title='Shortship']")
+	WebElement SelectShortship;
+	@FindBy(xpath = "//span[@title='Wrong Destination']")
+	WebElement SelectWrongDestination;
+	// @FindBy(xpath = "//span[@title='Wrong Destination']")
+	// WebElement SelectWrongDestination;
+	@FindBy(xpath = "//span[@title='Wrong Product']")
+	WebElement SelectWrongProduct;
+	@FindBy(xpath = "//span[@title='Wrong Ship date']")
+	WebElement SelectWrongShipdate;
+	@FindBy(xpath = "//span[@title='Lost Shipment']")
+	WebElement SelectLostShipment;
+	@FindBy(xpath = "//span[normalize-space()='SO Number']//following::input[@placeholder='Enter SO Number (use commas between multiple values)']") // Enter
+	WebElement EnterSONumber;
+	@FindBy(xpath = "//input[@placeholder='Enter PO Number (use commas between multiple values)']")
+	WebElement enterPOnumber;
+	@FindBy(xpath = "//button[normalize-space()='Reset']//preceding::input[@placeholder='Enter the CPN']") // To Enter
+	WebElement EnterCPN;
+	@FindBy(xpath = "//span[text()=\"Damage in transit\"]")
+	WebElement Damangeintransit;
+	@FindBy(xpath = "//input[@placeholder='Enter CIRS Number']")
+	WebElement EnterCIRS;
 
 	public void SelectServiceTypeAdmin() {
 		try {
@@ -57,78 +89,47 @@ public class Admin {
 		}
 	}
 
-	@FindBy(xpath = "//span[@title='Duplicate order']")
-	WebElement SelectReasonDuplicateOrder;
-
 	public void SelectReasonDuplicateOrder() {
 		commonclick.scrollAndClick(SelectReasonDuplicateOrder);
 	}
-
-	@FindBy(xpath = "//span[@title='Incorrect Labeling']")
-	WebElement SelectReasonIncorrectLabeling;
 
 	public void SelectReasonIncorrectLabeling() {
 		commonclick.scrollAndClick(SelectReasonIncorrectLabeling);
 	}
 
-	@FindBy(xpath = "//span[@title='Mixed Product']")
-	WebElement SelectMixedProduct;
-
 	public void SelectMixedProduct() {
 		commonclick.scrollAndClick(SelectMixedProduct);
 	}
-
-	@FindBy(xpath = "//span[@title='Overship']")
-	WebElement SelectOvership;
 
 	public void SelectOvership() {
 		commonclick.scrollAndClick(SelectOvership);
 	}
 
-	@FindBy(xpath = "//span[@title='Sample']")
-	WebElement Sample;
-
 	public void Sample() {
 		commonclick.scrollAndClick(Sample);
 	}
-
-	@FindBy(xpath = "//span[@title='Shortship']")
-	WebElement SelectShortship;
 
 	public void SelectShortship() {
 		commonclick.scrollAndClick(SelectShortship);
 	}
 
-	@FindBy(xpath = "//span[@title='Wrong Destination']")
-	WebElement SelectWrongDestination;
-
 	public void SelectWrongDestination() {
 		commonclick.scrollAndClick(SelectWrongDestination);
 	}
-
-	@FindBy(xpath = "//span[@title='Wrong Product']")
-	WebElement SelectWrongProduct;
 
 	public void SelectWrongProduct() {
 		commonclick.scrollAndClick(SelectWrongProduct);
 	}
 
-	@FindBy(xpath = "//span[@title='Wrong Ship date']")
-	WebElement SelectWrongShipdate;
-
 	public void SelectWrongShipdate() {
 		commonclick.scrollAndClick(SelectWrongShipdate);
 	}
-
-	@FindBy(xpath = "//span[@title='Lost Shipment']")
-	WebElement SelectLostShipment;
 
 	public void SelectLostShipment() {
 		commonclick.scrollAndClick(SelectLostShipment);
 	}
 
-	@FindBy(xpath = "//input[@placeholder='Enter CIRS Number']")
-	WebElement EnterCIRS;
+
 
 	public void EnterCIRS(String sting) {
 		commonclick.scrollAndClick(EnterCIRS);
@@ -200,9 +201,6 @@ public class Admin {
 
 	}
 
-	@FindBy(xpath = "//span[normalize-space()='SO Number']//following::input[@placeholder='Enter SO Number (use commas between multiple values)']") // Enter
-	WebElement EnterSONumber;
-
 	public void EnterSO() {
 
 		// Path to the Excel file
@@ -251,9 +249,7 @@ public class Admin {
 
 					System.out.println("Third column data: " + thirdColumnData);
 
-					// Enter the third column data into the global text field
 					if (!thirdColumnData.isEmpty()) {
-						// clickGlobal.click();
 						EnterSONumber.clear(); // Clear any existing value
 						EnterSONumber.sendKeys(thirdColumnData); // Enter the third column data
 					}
@@ -267,9 +263,6 @@ public class Admin {
 		}
 
 	}
-
-	@FindBy(xpath = "//input[@placeholder='Enter PO Number (use commas between multiple values)']")
-	WebElement enterPOnumber;
 
 	public void enterPOnumber() {
 
@@ -336,9 +329,6 @@ public class Admin {
 
 	}
 
-	@FindBy(xpath = "//button[normalize-space()='Reset']//preceding::input[@placeholder='Enter the CPN']") // To Enter
-	WebElement EnterCPN;
-
 	public void EnterCPNyhroughExcel() {
 		// Path to the Excel file
 		String excelFilePath = "C:\\Users\\oyadavx\\Downloads\\MMCPN_BulkUploadTemplate (1) - Copy - Copy.xlsx";
@@ -402,9 +392,6 @@ public class Admin {
 		}
 
 	}
-
-	@FindBy(xpath = "//span[text()=\"Damage in transit\"]")
-	WebElement Damangeintransit;
 
 	public void Damangeintransit() {
 
