@@ -13,11 +13,11 @@ public class TestRunnerParallelFeatureFile {
 	@CucumberOptions(features = "C:\\Users\\oyadavx\\git\\Intel_ISVC_R4C\\Intel_ISVC_R4C\\src\\test\\java\\Features\\StockRotation_CaseCreation.feature",
 
 			glue = "StepDefination",
-		   //tags = "@Sanity111",
+		   tags = "@Retest",
 			monochrome = true,
 		    dryRun=false	,
 			plugin = {"pretty", "html:target/cucumber-reports.html","junit:target/cucumber.xml",
-					"rerun:target/faildrerun.txt","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"} )
+					"rerun:target/faildrerun.txt"} )
 			public class CucumberTest extends AbstractTestNGCucumberTests {
 
 		  

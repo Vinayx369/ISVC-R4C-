@@ -15,7 +15,7 @@ public class TestRunnerMultipleTime {
 			"pretty", "html:target/cucumber-reports.html", "junit:target/cucumber.xml", "rerun:target/faildrerun.txt" })
 	public class CucumberTest extends AbstractTestNGCucumberTests {
 
-		private static final int RUN_COUNT = 2; // Number of times to run the feature file
+		private static final int RUN_COUNT = 4; // Number of times to run the feature file
 
 		@Override
 		@DataProvider(parallel = false)

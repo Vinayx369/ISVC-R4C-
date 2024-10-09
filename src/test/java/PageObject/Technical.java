@@ -9,8 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -917,64 +916,19 @@ public class Technical {
 	
 	@FindBy(xpath="//div[@data-target-selection-name='sfdc:RecordField.Case.Status']//div//dd//div//span")
 	WebElement Status;
-//	public void PrintCaseNoSR() throws InterruptedException {
-//		String CaseNo = PrintCaseNo.getText();
-//		//String CaseTypes = CaseType.getText();
-//		String CaseName=Status.getText();
-//		//String CaseTypes = CaseType.getText();
-//		System.out.println("Case Number:- " + CaseNo + "Status"+CaseName+ "Case Record Type: "
-//				);
-//	    String caseDetails = "Case Number: "+ CaseNo + "  Status: " + CaseName;
-//	    System.out.println(caseDetails);
-//	    String key = "Case_Details-" + System.currentTimeMillis(); // Using timestamp as a unique identifier
-//	    FileUtils.saveToPropertiesFile("C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/case_values.properties", key, caseDetails);
-//
-//	}
-	
-//	public void PrintCaseNoSR() throws InterruptedException {
-//	    String CaseNo = PrintCaseNo.getText();
-//	    String CaseName = Status.getText();
-//	    
-//	    // Get the current date and time
-//	    LocalDateTime currentDateTime = LocalDateTime.now();
-//	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); 
-//	    String formattedDateTime = currentDateTime.format(formatter);
-//	    
-//	    // Print case details with date and time
-//	    System.out.println(" Case Number-" + CaseNo + " Status-" + CaseName + " Date and Time-" + formattedDateTime);
-//	    
-//	    String caseDetails = "Case Number-"+ CaseNo + "  Status-" +CaseName + "  Date and Time-" + formattedDateTime;
-//	    System.out.println(caseDetails);
-//	    String key = "Case_Details" ; 
-//	 //   String key = "Case_Details" + System.currentTimeMillis(); // Using timestamp as a unique identifier
-//	    FileUtils.saveToPropertiesFile("C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/case_values.properties", key, caseDetails);
-//	}
-	
-	 public void PrintCaseNoSR() throws InterruptedException {
-	        String CaseNo = PrintCaseNo.getText();  // Assuming PrintCaseNo is already defined WebElement
-	        String CaseName = Status.getText();     // Assuming Status is already defined WebElement
+	public void PrintCaseNoSR() throws InterruptedException {
+		String CaseNo = PrintCaseNo.getText();
+		//String CaseTypes = CaseType.getText();
+		String CaseName=Status.getText();
+		//String CaseTypes = CaseType.getText();
+		System.out.println("Case Number:- " + CaseNo + "Status"+CaseName+ "Case Record Type: "
+				);
+	    String caseDetails = "Case Number: "+ CaseNo + "  Status: " + CaseName;
+	    System.out.println(caseDetails);
+	    String key = "case_details_" + System.currentTimeMillis(); // Using timestamp as a unique identifier
+	    FileUtils.saveToPropertiesFile("C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/case_values.properties", key, caseDetails);
 
-	        // Get the current date and time
-	        LocalDateTime currentDateTime = LocalDateTime.now();
-	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-	        String formattedDateTime = currentDateTime.format(formatter);
-
-	        // Print case details with date and time
-	        System.out.println("Case Number-" + CaseNo + " Status-" + CaseName + " Date and Time-" + formattedDateTime);
-
-	        String caseDetails = "Case Number-" + CaseNo + "  Status-" + CaseName + "  Date and Time-" + formattedDateTime;
-	        System.out.println(caseDetails);
-
-	        // Use Case Number as the unique key to store the case details
-	        String key = "Case_Details_" + CaseNo;
-
-	        // Save the case details into the properties file
-	        FileUtils.saveToPropertiesFile("C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/case_values.properties", key, caseDetails);
-	    }
-	
-	
-	
-	
+	}
 	// test bulk with multiple contact
 	public void EnterOutinecontactName(String ContactName) {
 		EnterTextGlobalfield.sendKeys(ContactName); // Enter the third column data

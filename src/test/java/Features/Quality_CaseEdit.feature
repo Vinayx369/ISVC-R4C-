@@ -4,7 +4,7 @@ Feature: Case Save For Later
    #When User open URL 
   # Then User Enter Email Address and pass PassWord
    #And Click on login
-@TestCaseNo
+@TestCaseNo1
 @QualityCESanity11
 Scenario: Verify the Open Unsubmitted status Case Edit for Quality with Freight type as CRF
   Given User Launch Chrome browser
