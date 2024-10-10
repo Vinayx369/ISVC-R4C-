@@ -18,9 +18,15 @@ Given User Launch Chrome browser
    And Select All other detils
    And Select Ship To contact
    And Select credit
+<<<<<<< HEAD
   And Select GRL Exception Reason
   Then Enter Justification
   #When Select ReTurnTo Customer address
+=======
+    And Select GRL Exception Reason
+   Then Enter Justification
+   #When Select ReTurnTo Customer address
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
   And Select RCA address first
    And Select Fright Type IMF
    And Select Return customer contact first
@@ -81,7 +87,11 @@ Given User Launch Chrome browser
   # Then Click on the search button
    And Enter MMIDs By using Excel Sheet
    And Click on search button after Entering MM Number
+<<<<<<< HEAD
   And Select All Line items
+=======
+   And Select All Line items
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
   And Select First Item
    And Clickon PO History
    When Enter Quantity into All fields
@@ -95,7 +105,11 @@ Given User Launch Chrome browser
  #And Select First Item
  And Click on the Save and Summary button
  And Click on submit button After Summary
+<<<<<<< HEAD
  And Print Case No into Console SR 
+=======
+   
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
    
    
    

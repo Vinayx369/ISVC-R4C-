@@ -12,10 +12,17 @@ Feature: Case Creation Workflow for Technical Service Type with Credit Remedy an
     And Select Remedy credit and reason Fail Customer End
     And Select All other detils
     And Select Ship To contact
+<<<<<<< HEAD
     And Select RCA address first
     And Select Return customer contact first
     And Select CA Address first
    When select Collection Contact first
+=======
+    And Select RCA address
+    And Select Return customer contact
+    And Select CA Address
+    When select Collection Contact
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
     #And Select Collection Date
     And Click on next
     And Select Purchase/Sales Order button and Enter PO Number "4511274812"
@@ -50,9 +57,15 @@ Feature: Case Creation Workflow for Technical Service Type with Credit Remedy an
     And Select Remedy credit and reason Fail Customer End
     And Select Ship To contact
     And Select RCA CMF Type address
+<<<<<<< HEAD
     And Select Return customer contact first
    And Select CA Address first
    When select Collection Contact first
+=======
+    And Select Return customer contact
+    And Select CA Address
+    When select Collection Contact
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
     And Click on next
     And Select Purchase/Sales Order button and Enter SO Number "0019141969"
     Then Click on the search button

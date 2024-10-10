@@ -2,12 +2,17 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2024-10-10T21:22:27 IST" name="Default suite" finished-at="2024-10-10T21:58:20 IST" duration-ms="2152615">
+=======
+  <suite started-at="2024-10-09T22:39:50 IST" name="Default suite" finished-at="2024-10-09T22:44:11 IST" duration-ms="260935">
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
+<<<<<<< HEAD
     <test started-at="2024-10-10T21:22:27 IST" name="Default test" finished-at="2024-10-10T21:58:20 IST" duration-ms="2152615">
       <class name="TestRunner.TestRunner$CucumberTest">
         <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-10T21:22:27 IST" name="setUpClass" finished-at="2024-10-10T21:22:28 IST" duration-ms="674" status="PASS">
@@ -15,22 +20,43 @@
             <param index="0">
               <value>
                 <![CDATA[org.testng.TestRunner@565030b7]]>
+=======
+    <test started-at="2024-10-09T22:39:50 IST" name="Default test" finished-at="2024-10-09T22:44:11 IST" duration-ms="260935">
+      <class name="TestRunner.TestRunner$CucumberTest">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-09T22:39:50 IST" name="setUpClass" finished-at="2024-10-09T22:39:51 IST" duration-ms="644" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@55a2f08b]]>
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
+<<<<<<< HEAD
         <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-10T21:22:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-10T21:58:13 IST" duration-ms="2145400" status="FAIL">
           <params>
             <param index="0">
               <value>
                 <![CDATA["Verify the Open Unsubmitted status Case Edit for Exception with Freight type as CRF"]]>
+=======
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-09T22:39:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-10-09T22:44:07 IST" duration-ms="256875" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["test2"]]>
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA["Exception Case Edit"]]>
+=======
+                <![CDATA["Admin Save For Later"]]>
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
               </value>
             </param>
           </params>
@@ -38,6 +64,7 @@
             <message>
               <![CDATA[disconnected: not connected to DevTools
   (failed to check if window was closed: disconnected: not connected to DevTools)
+<<<<<<< HEAD
   (Session info: chrome=129.0.6668.100)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
@@ -45,10 +72,20 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [4944a80d8cc952c9b96221922278d201, findElement {using=xpath, value=(//button[text()="Next"])[2]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.100, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53234}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53234/devtoo..., se:cdpVersion: 129.0.6668.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 4944a80d8cc952c9b96221922278d201]]>
+=======
+  (Session info: chrome=129.0.6668.91)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [611d2ee02805242df40d1d5207d9952d, findElement {using=xpath, value=//lightning-formatted-text[text()="Open, Unsubmitted"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49828}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 611d2ee02805242df40d1d5207d9952d]]>
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
   (failed to check if window was closed: disconnected: not connected to DevTools)
+<<<<<<< HEAD
   (Session info: chrome=129.0.6668.100)
 Build info: version: '4.25.0', revision: '8a8aea2337'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
@@ -56,6 +93,15 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [4944a80d8cc952c9b96221922278d201, findElement {using=xpath, value=(//button[text()="Next"])[2]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.100, chrome: {chromedriverVersion: 129.0.6668.100 (cf58cba358d..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53234}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53234/devtoo..., se:cdpVersion: 129.0.6668.100, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: 4944a80d8cc952c9b96221922278d201
+=======
+  (Session info: chrome=129.0.6668.91)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.4'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [611d2ee02805242df40d1d5207d9952d, findElement {using=xpath, value=//lightning-formatted-text[text()="Open, Unsubmitted"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 129.0.6668.91, chrome: {chromedriverVersion: 129.0.6668.91 (b00bc8b76d60..., userDataDir: C:\Users\oyadavx\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49828}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49828/devtoo..., se:cdpVersion: 129.0.6668.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 611d2ee02805242df40d1d5207d9952d
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -70,18 +116,31 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+<<<<<<< HEAD
 at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:194)
 at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:190)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
 at StepDefination.Steps.click_on_next_accept_edit(Steps.java:228)
 at ✽.Click On Next Accept Edit(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Exception_CaseEdit.feature:33)
+=======
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy25.getText(Unknown Source)
+at PageObject.ContactPage_R4C_CaseCreation.statusOpenUn(ContactPage_R4C_CaseCreation.java:815)
+at StepDefination.Steps.check_status_open_unsubmitted(Steps.java:1614)
+at ✽.Check Status Open Unsubmitted(file:///C:/Users/oyadavx/git/Intel_ISVC_R4C/Intel_ISVC_R4C/src/test/java/Features/Admin_SaveForLater.feature:57)
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-10T21:58:13 IST" name="tearDownClass" finished-at="2024-10-10T21:58:20 IST" duration-ms="6500" status="PASS">
+=======
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:TestRunner.TestRunner$CucumberTest@4e3958e7]" started-at="2024-10-09T22:44:07 IST" name="tearDownClass" finished-at="2024-10-09T22:44:11 IST" duration-ms="3363" status="PASS">
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

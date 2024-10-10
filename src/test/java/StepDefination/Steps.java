@@ -33,7 +33,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+<<<<<<< HEAD
 import org.openqa.selenium.ElementNotInteractableException;
+=======
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
 
 public class Steps extends BaseClass  {
 	public WebDriver rdriver;
@@ -2258,14 +2261,21 @@ public void select_service_type_quality_and_click_create_button_enter_sold_throu
 	
 	@When("Validate Fright type as a CMF")
 	public void validate_fright_type_as_a_cmf() {
+<<<<<<< HEAD
 		exceptions=new Exceptions(driver);
+=======
+	    
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
 		exceptions.VerifyCMF();
 		
 	}
 	
 	@When("Validate Fright type as a IMF")
 	public void validate_fright_type_as_a_imf() {
+<<<<<<< HEAD
 		exceptions=new Exceptions(driver);
+=======
+>>>>>>> acb8ea77c883fa0805c227ae14fa4b673373a82e
 	    exceptions.VerifyIMF();
 		
 		
