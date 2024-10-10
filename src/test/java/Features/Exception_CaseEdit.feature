@@ -18,9 +18,9 @@ Given User Launch Chrome browser
    And Select All other detils
    And Select Ship To contact
    And Select credit
-    And Select GRL Exception Reason
-   Then Enter Justification
-   #When Select ReTurnTo Customer address
+  And Select GRL Exception Reason
+  Then Enter Justification
+  #When Select ReTurnTo Customer address
   And Select RCA address first
    And Select Fright Type IMF
    And Select Return customer contact first
