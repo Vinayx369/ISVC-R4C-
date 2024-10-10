@@ -15,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Utilities.WaitHelper;
 import utils.CommonUtils;
@@ -153,6 +154,30 @@ public class Exceptions {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@FindBy(xpath = "//span[text()=\"Customer Routed Freight\"]")
+	WebElement VerifyCMF;
+
+	public void VerifyCMF() {
+		String CMFValue = VerifyCMF.getText(); // Fetch the text from the element
+		String expectedCMFValue = "Customer Routed Freight"; // Expected text
+System.out.println("CMF Location: "+CMFValue);
+		// Assertion to verify the CMF value
+		Assert.assertEquals(CMFValue, expectedCMFValue, "CMF value did not match!");
+
+	}
+	@FindBy(xpath = "//span[text()=\"Intel Managed Freight\"]")
+	WebElement VerifyIMF;
+
+	public void VerifyIMF() {
+		// Fetch the text from the located element
+		String IMFValue = VerifyIMF.getText();
+		String expectedCMFValue = "Intel Managed Freight";
+		System.out.println("IMF Location: "+IMFValue);
+
+		// Assertion to verify the CMF value
+		Assert.assertEquals(IMFValue, expectedCMFValue, "IMF value did not match!");
 	}
 
 }

@@ -48,7 +48,7 @@ Feature: Admin Case Creation
    And Click on the Get credit price button 
    And Click on the Save and Summary button
     And Click on submit button After Summary
-    #And Print Case No into Console SR
+    And Print Case No into Console SR
     And Close browser
     
  @TestCaseNo2

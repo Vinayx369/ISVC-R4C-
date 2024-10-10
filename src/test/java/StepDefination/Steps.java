@@ -32,6 +32,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.ElementNotInteractableException;
 
 public class Steps extends BaseClass  {
 	public WebDriver rdriver;
@@ -179,15 +181,13 @@ public class Steps extends BaseClass  {
 	@When("Select Purchase\\/Sales Order button and Enter PO Number Through Excel")
 	public void select_purchase_sales_order_button_and_enter_po_number_through_excel() {
 		contacts.clickonPORadiobutton();
-
 		admin = new Admin(driver);
 		admin.enterPOnumber();
-
 	}
 
 	@Then("Click on the search button")
 	public void click_on_the_search_button() throws InterruptedException {
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		contacts.clickonsearch();
 	}
 
@@ -203,7 +203,7 @@ public class Steps extends BaseClass  {
 
 	@Then("Click on Product Validation and Next button")
 	public void click_on_product_validation_and_next_button() throws InterruptedException {
-		Thread.sleep(10000);
+		//Thread.sleep(10000);
 		contacts.clickonproductvalidation();
 		contacts.clickonnextafterPO();
 	}
@@ -254,7 +254,7 @@ public class Steps extends BaseClass  {
 
 	@When("Click on the Get credit price")
 	public void click_on_the_get_credit_price() throws InterruptedException {
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		contacts.clickongetcreditprice();
 	}
 
@@ -383,7 +383,7 @@ public class Steps extends BaseClass  {
 	@When("Click on search button after Entering MM Number")
 	public void click_on_search_button_after_entering_mm_number() throws InterruptedException {
 		contacts.ClickOnSearchAfterMM();
-		Thread.sleep(2000);
+	//	Thread.sleep(2000);
 		contacts.selectallcheckbox();
 	}
 
@@ -1042,6 +1042,12 @@ public class Steps extends BaseClass  {
 		Technical.SelectRCA();
 	}
 
+	
+	
+	
+	
+	
+	
 	@Then("Select RCA for OptIn\\/Out")
 	public void select_rca_for_opt_in_out() throws InterruptedException {
 		Technical.RCA();
@@ -1288,6 +1294,7 @@ public class Steps extends BaseClass  {
 	@When("Select First Item")
 	public void select_first_item() throws InterruptedException {
 		// Thread.sleep(3000);
+		//contacts.selectallcheckbox();
 		Technical.Selectfirst();
 
 	}
@@ -1296,40 +1303,27 @@ public class Steps extends BaseClass  {
 	@When("Click On create button and select remedy and select reason  Warranty Service\\/Software")
 	public void click_on_create_button_and_select_remedy_and_select_reason_warranty_service_software()
 			throws InterruptedException {
-		// Thread.sleep(2000);
 		contacts.clickoncreatebutton();
-		// Thread.sleep(2000);
+		
 		contacts.EnterSoldTo();
-		// Thread.sleep(2000);
 		contacts.SoldToIdContact();
-		// Thread.sleep(5000);
 		Technical = new Technical(driver);
 		Technical.SelectNPR();
-		// Thread.sleep(2000);
 		Technical.ClickOnNPR();
-		// Thread.sleep(2000);
 		Technical.SelectReason();
-		// Thread.sleep(2000);
 		Technical.SelectWarrentyService();
 	}
 
 //----------------NPR case creation Using OPN
 	@When("Click On create button and select remedy and select reason  Simple")
 	public void click_on_create_button_and_select_remedy_and_select_reason_simple() throws InterruptedException {
-		// Thread.sleep(2000);
 		contacts.clickoncreatebutton();
-		// Thread.sleep(2000);
 		contacts.EnterSoldTo();
-		// Thread.sleep(2000);
 		contacts.SoldToIdContact();
-		// Thread.sleep(5000);
 		Technical = new Technical(driver);
 		Technical.SelectNPR();
-		// Thread.sleep(2000);
 		Technical.ClickOnNPR();
-		// Thread.sleep(2000);
 		Technical.SelectReason();
-		// Thread.sleep(2000);
 		Technical.SelectSimpleReason();
 
 	}
@@ -1430,9 +1424,7 @@ public class Steps extends BaseClass  {
 	public void select_service_type_technical_and_click_on_create_buttons_and_enter_sold_to(String string)
 			throws InterruptedException {
 		contacts.clickoncreatebutton();
-		Thread.sleep(2000);
 		contacts.EnterSoldToNumber(string);
-		Thread.sleep(2000);
 		// contacts.SelectGlobalsearchoption();
 		driver.findElement(
 				By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
@@ -1461,13 +1453,9 @@ public class Steps extends BaseClass  {
 	@When("Enter text global and select {string}")
 	public void enter_text_global_and_select(String string) throws InterruptedException {
 		contacts = new ContactPage_R4C_CaseCreation(driver);
-		Thread.sleep(4000);
 		contacts.clickGlobal();
-		Thread.sleep(4000);
 		contacts.EnterTextGlobalfield(string);
-		Thread.sleep(2000);
 		contacts.SelectGlobalsearch();
-		Thread.sleep(1000);
 		
 		
 	}
@@ -1477,7 +1465,6 @@ public class Steps extends BaseClass  {
 			throws InterruptedException {
 
 		contacts = new ContactPage_R4C_CaseCreation(driver);
-		Thread.sleep(2000);
 		contacts.clickGlobal();
 		Thread.sleep(2000);
 		contacts.EnterTextGlobalfield(string);
@@ -1677,17 +1664,12 @@ lp.enterCredentialsAndLogin();
 	
 	@Then("Select Service Type Exception and Click create button enter Sold through Excel file")
 	public void select_service_type_exception_and_click_create_button_enter_sold_through_excel_file() throws InterruptedException {
-	    
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		exceptions=new Exceptions(driver);
-		Thread.sleep(2000);
 		exceptions.SelectServiceTypeException();
-		
 		contacts.clickoncreatebutton();
 		Technical = new Technical(driver);
-		//Thread.sleep(2000);
 		Technical.enterSlodToExcel();
-		Thread.sleep(2000);
-		//Technical.selectSoldtoOption();
 		driver.findElement(
 				By.xpath("//li[@role='option']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']"))
 				.click();
@@ -1705,6 +1687,20 @@ lp.enterCredentialsAndLogin();
 	    
 	}
 	
+	@Then("Select Exception Return Reason and click ok")
+	public void select_exception_return_reason_and_click_ok() {
+		Technical.SelectReason();
+		exceptions.ExceptionReturn();
+		contacts.clickok();	
+	}
+	
+	@Then("Select Exception Return Reason and click cancel")
+	public void select_exception_return_reason_and_click_cancel() {
+		Technical.SelectReason();
+		exceptions.ExceptionReturn();
+		contacts.ClickOnCancel();	
+	}
+	
 	@Then("Select GRL Exception Reason")
 	public void select_grl_exception_reason() {
 		Technical.SelectReason();
@@ -1718,14 +1714,6 @@ lp.enterCredentialsAndLogin();
 		exceptions.QuaterlyException();
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	@Then("Enter Justification")
@@ -1763,6 +1751,55 @@ lp.enterCredentialsAndLogin();
 		contacts.SelectFirstRCA();
 
 	}
+	
+	@Then("Select RCA address first and click ok")
+	public void select_rca_address_firstok() throws InterruptedException {
+		// Thread.sleep(4000);
+		// ---------------------------
+		// Thread.sleep(5000);
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Create a WebDriverWait object
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+					"//button[@aria-label='Return to Customer Address']/..//button[@aria-label='Return to Customer Address']")));
+			JavascriptExecutor js = (JavascriptExecutor) driver; // Scroll the element into view
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			Actions actions = new Actions(driver); // Focus on the element
+			actions.moveToElement(element).perform();
+			js.executeScript("arguments[0].click();", element); // Click the element using JavaScript
+		} catch (TimeoutException e) {
+			System.out.println("Element not found or not clickable within the specified time");
+		} finally {
+			System.out.println("Element still not clickable");
+		}
+		// Thread.sleep(4000);
+		contacts.SelectFirstRCA();
+		contacts.clickok();
+	}
+	
+	@Then("Select RCA address first and click cancel")
+	public void select_rca_address_firstcancel() throws InterruptedException {
+		// Thread.sleep(4000);
+		// ---------------------------
+		// Thread.sleep(5000);
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // Create a WebDriverWait object
+			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+					"//button[@aria-label='Return to Customer Address']/..//button[@aria-label='Return to Customer Address']")));
+			JavascriptExecutor js = (JavascriptExecutor) driver; // Scroll the element into view
+			js.executeScript("arguments[0].scrollIntoView(true);", element);
+			Actions actions = new Actions(driver); // Focus on the element
+			actions.moveToElement(element).perform();
+			js.executeScript("arguments[0].click();", element); // Click the element using JavaScript
+		} catch (TimeoutException e) {
+			System.out.println("Element not found or not clickable within the specified time");
+		} finally {
+			System.out.println("Element still not clickable");
+		}
+		// Thread.sleep(4000);
+		contacts.SelectFirstRCA();
+		contacts.ClickOnCancel();
+	}
+	
 
 	@Then("Select Return customer contact first")
 	public void select_return_customer_contact_first() throws InterruptedException {
@@ -2036,11 +2073,28 @@ public void select_service_type_quality_and_click_create_button_enter_sold_throu
 		contacts = new ContactPage_R4C_CaseCreation(driver);
 		contacts.ClickonFrightType();
 		contacts.SelectFrightTypeIMF();
-		contacts.ClickOnCancel();
+		
+		try {
+	        contacts.ClickOnCancel(); // Try to click on Cancel if available
+	    }
+		 catch (ElementNotInteractableException e) {
+		        System.out.println("Cancel button is present but not interactable, skipping...");
+		    }
+		//contacts.ClickOnCancel();
 		// contacts.clickok();
 
 	}
 
+	
+	@Then("Select Fright Type IMF and click ok")
+	public void select_fright_type_imfok() {
+		contacts = new ContactPage_R4C_CaseCreation(driver);
+		contacts.ClickonFrightType();
+		contacts.SelectFrightTypeIMF();
+		//contacts.ClickOnCancel();
+		contacts.clickok();
+
+	}
 	@Then("Select Fright Type CMF")
 	public void select_fright_type_cmf() {
 
@@ -2166,6 +2220,10 @@ public void select_service_type_quality_and_click_create_button_enter_sold_throu
 	   exceptions.SelectBoxCondition();
 	}
 
+	
+	
+	
+	
 	@When("Upload Bulk File With MM IDS {string} Exception")
 	public void upload_bulk_file_with_mm_ids_exception(String string) throws InterruptedException, AWTException {
 	    
@@ -2197,5 +2255,22 @@ public void select_service_type_quality_and_click_create_button_enter_sold_throu
 	public void enter_ul_ts_from_excel() throws InterruptedException {
 	    Technical.EnterULTs();
 	}
+	
+	@When("Validate Fright type as a CMF")
+	public void validate_fright_type_as_a_cmf() {
+		exceptions=new Exceptions(driver);
+		exceptions.VerifyCMF();
+		
+	}
+	
+	@When("Validate Fright type as a IMF")
+	public void validate_fright_type_as_a_imf() {
+		exceptions=new Exceptions(driver);
+	    exceptions.VerifyIMF();
+		
+		
+	}
+	
+	
 	
 }

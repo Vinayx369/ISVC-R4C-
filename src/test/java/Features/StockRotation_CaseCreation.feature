@@ -9,6 +9,7 @@ Feature: R4C Case Creation
    When User open URL 
    Then User Enter Email Address and pass PassWord
    And Click on login 
+  # And Enter text global excel
    And Enter text global and select "Sarah Aggelidis"
    And Click on the New R4C case creation button
    Then User can view New R4C Case popup
@@ -41,13 +42,13 @@ Feature: R4C Case Creation
     And Click on the Validate Allowance
     And Click on the Save and Summary button
     And Click on submit button After Summary
-        And Print Case No into Console SR
+    And Print Case No into Console SR
     And Check RMA status
-   # And Print Case No into Console SR
+#   And Print Case No into Console SR
     Then User can view Case creation Popup message
     And Click on the Submit button
     Then User can view Successful message
-   # And Close browser
+   And Close browser
     
 @TestCaseNo2
 @Sanity22
