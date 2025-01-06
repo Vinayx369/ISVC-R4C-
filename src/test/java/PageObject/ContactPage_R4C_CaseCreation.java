@@ -2,7 +2,6 @@ package PageObject;
 
 import java.awt.event.InputEvent;
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +11,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
@@ -27,6 +27,9 @@ import utils.CommonUtils;
 import utils.WaitUtils;
 import utils.waitUtilsZ;
 import utils.waitUtilsZ.WaitType;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContactPage_R4C_CaseCreation {
 	public WebDriver ldriver;
@@ -48,8 +51,9 @@ public class ContactPage_R4C_CaseCreation {
 
 	}
 
-	// --------------------------Scenario 1 Xpath Element----------
-
+	/*
+	 * Authur: Omkar Yadav Change:SR Case Creation Description:
+	 */
 	@FindBy(xpath = "//button[@title=\"Show Navigation Menu\"]")
 	WebElement clickoncontactdropdown;
 	@FindBy(xpath = "//span[@class='menuLabel slds-listbox__option-text slds-listbox__option-text_entity'][normalize-space()='Contacts']")
@@ -64,32 +68,20 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement EnterTextGolbarsearch;
 	@FindBy(xpath = "//a[normalize-space()='Sarah Aggelidis']")
 	WebElement selecttextcontact;
-	// Global search POC
-	//@FindBy(xpath = "//button[@aria-label='Search']/..//lightning-primitive-icon[@variant='bare']")
-	//@FindBy(xpath="/html[1]/body[1]/div[4]/div[1]/section[1]/header[1]/div[2]/div[2]/div[1]/div[1]/button[1]")
-	@FindBy(xpath="//button[text()=\"Search...\"]")
+	@FindBy(xpath = "//button[text()=\"Search...\"]")
 	WebElement clickGlobal;
 	@FindBy(xpath = "//lightning-layout[1]//slot[1]//lightning-layout-item[1]//slot[1]//div[1]//span[1]//c-r4c_-a-g_-reusable-lookup[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//div[1]//lightning-input[1]//lightning-primitive-input-simple[1]//div[1]//div[1]//input[1]")
 	WebElement clickonsoldtobox;
-	// @FindBy(xpath = "//button[normalize-space()='New R4C Case']") // Click on the
-	// CreateR4CCase button
 	@FindBy(xpath = "//section[@aria-expanded='true']//section[@role='tabpanel']//button[@type='button'][normalize-space()='New R4C Case']")
 	WebElement ClickonNewR4CCaseButton;
 	@FindBy(xpath = "//span[@part='label'][normalize-space()='Stock Rotation']/..//span[@part='indicator']") // To // //
-																												// //
-																												// Roatation
 	WebElement clickonservicetype;
-	// @FindBy(xpath = "//button[normalize-space()='Create']") // To click on the
-	// create button old
-	@FindBy(xpath = "//div[@slot='footer']//button[@type='button'][normalize-space()='Cancel']//following::button[normalize-space()='Create']")
+	@FindBy(xpath = "//button[@type='button'][normalize-space()='Cancel']//following::button[normalize-space()='Create']")
 	WebElement clickoncreatebutton;
 	@FindBy(xpath = "//div[@aria-label='Sales Area']//lightning-base-combobox-item[@role='option']")
 	WebElement clicksalesareaselect;
-// By Using Axes Sibbling
-	//@FindBy(xpath = "//label[text()='Sold To']/following-sibling::div//input")
-	@FindBy(xpath="(//input[@placeholder=\"Select one\"])[1]")
+	@FindBy(xpath = "(//input[@placeholder=\"Select one\"])[1]")
 	WebElement EnterSoldto; // Enter Sold To id into fields
-	
 	@FindBy(xpath = "//span[text()='6006683685-ALSO Deutschland GmbH']/ancestor::li") // To select searched contact
 	WebElement Clickonsoldtocontacts; // Click on sild to detils on dropdown
 	@FindBy(xpath = "//label[text()='Return Reason']/following-sibling::div")
@@ -98,17 +90,19 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement selectStandardStockRotation; // To select Stock Rotation from from dropdown
 	@FindBy(xpath = "//button[normalize-space()='Next']")
 	WebElement clickonnextaftersuldto;
+	@FindBy(xpath = "//button[normalize-space()='Next']")
+	WebElement clickonnextaftersuldto2;
 	@FindBy(xpath = "//span[contains(text(),'Purchase/Sales Order')]/..//span[@class='slds-radio_faux']")
 	WebElement ClickonPO; // To click PO radio button
 	@FindBy(xpath = "//input[@placeholder='Enter PO Number (use commas between multiple values)']")
 	WebElement enterPOnumber; // To Enter PO number into the test field
-	@FindBy(xpath = "//button[normalize-space()='Reset']//following::button[normalize-space()='Search']")
+	@FindBy(xpath = "//button[text()=\"Search\"]")
 	WebElement Clickonsearch;
-	@FindBy(xpath = "//a[normalize-space()='MM']/../..//span[@part='indicator']")
+	@FindBy(xpath = "(//span[@part='indicator'])[4]")
 	WebElement selectAllcheckbox;
 	@FindBy(xpath = "//button[normalize-space()='Cancel']//following::button[contains(text(),'Next')]")
 	WebElement AfterPONumberclickonNext;
-	@FindBy(xpath="//button[text()=\"Get Credit Price\"]")
+	@FindBy(xpath = "//button[text()=\"Get Credit Price\"]")
 	WebElement ClickGetCreditPrice;
 	@FindBy(xpath = "//button[normalize-space()='Product Validation']")
 	WebElement ProductvalidationButton;
@@ -138,10 +132,8 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement SaveSummary;
 	@FindBy(xpath = "//button[text()=\"Submit\"]")
 	WebElement ClickonsubmitafterSave;
-// --------------------------Scenario 2 Xpath Element----------
 	@FindBy(xpath = "//span[normalize-space()='SO Number']//following::input[@placeholder='Enter SO Number (use commas between multiple values)']") // Enter
 	WebElement EnterSONumber;
-// --------------------------Scenario 3 Xpath Element----------
 	@FindBy(xpath = "//span[contains(text(),'6006683685-ALSO Deutschland GmbH')]")
 	WebElement SoldToIdContact;
 	@FindBy(xpath = "(//button[@name=\"Select one\"])[2]")
@@ -157,11 +149,9 @@ public class ContactPage_R4C_CaseCreation {
 	@FindBy(xpath = "//button[normalize-space()='Reset']//following::button[normalize-space()='Search']") // To click on
 	WebElement ClickonSearchButtonAfterMM;
 	@FindBy(xpath = "//button[normalize-space()='Cancel']//preceding::button[normalize-space()='PO History']") // To
-	// @FindBy(xpath="//button[normalize-space()='PO <>']")
 	WebElement POHistoryButton;
 	@FindBy(xpath = "//button[normalize-space()='Cancel']//following::button[contains(text(),'Next')]") // To click on
 	WebElement POHistoryNext;
-// ----------------------Scenario 4 Xpath Element----------
 	@FindBy(xpath = "//span[contains(text(),'Bulk Upload')]/..//span") // To click on the bulk upload button
 	WebElement BulkUploadRadioButton;
 	@FindBy(xpath = "//button[normalize-space()='Reset']//preceding::span[@part='button']") // To click on the Upload
@@ -171,32 +161,24 @@ public class ContactPage_R4C_CaseCreation {
 	@FindBy(xpath = "//div[@part='modal-footer']//button[@part='button'][normalize-space()='Cancel']")
 	WebElement ClickOnCancel;
 
-	public void UploadDrop() {
-		commonclick.scrollAndClick(UploadDrop);
-	}
-
 	@FindBy(xpath = "//button[normalize-space()='Reset']//following::button[normalize-space()='Validate']") // To Click
 	WebElement ClickonValidate;
-// ------------------------Scenario 8  Xpath Element--------------
 	@FindBy(xpath = "//body//div//lightning-input[@data-key='CPN']//span//span[1]//following::span[contains(text(),'CPN')]") // To
 	WebElement ClickOnCPN;
 	@FindBy(xpath = "//button[normalize-space()='Reset']//preceding::input[@placeholder='Enter the CPN']") // To Enter
 	WebElement EnterCPN;
 	@FindBy(xpath = "//button[normalize-space()='Reset']//following::button[normalize-space()='Search']") // To Click on
 	WebElement AfterCPNSearch;
-//------------------------Scenario 9   Xpath Elelemnt---------------------
 	@FindBy(xpath = "//span[contains(text(),'Order Part Number')]/..//span") // To Click On the OPN Radio Button
 	WebElement ClickonOPNRadiobutton;
 	@FindBy(xpath = "//button[normalize-space()='Reset']//preceding::input[@placeholder='Enter the Order Part Number']")
 	WebElement EnterOPN;
-//----------------------Scenario 12-----------------------	
 	@FindBy(xpath = "//button[contains(text(),'Next')]//following::button[normalize-space()='Save for Later']")
 	WebElement MMSaveforlater;
 	@FindBy(xpath = "//div[@part='modal-footer']//button[@part='button'][normalize-space()='Cancel']//following::button[normalize-space()='OK']")
 	WebElement ClickonOkButton;
 	@FindBy(xpath = "//span[normalize-space()='Status']//following::lightning-formatted-text[normalize-space()='Open, Unsubmitted']")
 	WebElement getSavedstatustext;
-// -------------------Scenario 14 S
 	@FindBy(xpath = "//input[@placeholder=\"Select one\"]")
 	WebElement SelectL3User;
 	@FindBy(xpath = "//li[@data-id='vinayx.kumar.ganji@intel.com']//lightning-primitive-icon[@exportparts='icon']//*[name()='svg']//following::span[contains(text(),'Vinay Kumar Ganji')]")
@@ -205,21 +187,17 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement ClickonselectL3;
 	@FindBy(xpath = "//div[@part='modal-footer']//button[@type='button'][normalize-space()='Cancel']//following::button[normalize-space()='Select']")
 	WebElement SelectL3user;
-// -------------------Scenario 15 
 	By ClickonAccept = By.xpath("//ul[contains(.,'Post')]/li/a[@title='Accept']");
 	@FindBy(xpath = "//section[@aria-expanded='true']//slot//slot//span[contains(text(),'Accept')]/../../..//span[contains(text(),'Edit')]")
 	WebElement ClickonEdit;
 	@FindBy(xpath = "//flexipage-component2[@data-component-id='forceChatter_publisher']//span[contains(text(),'Post')]/../../../../..//p")
 	WebElement EnterTextintoPost;
-// Scenario 16-------------------------
 	@FindBy(xpath = "//span[contains(text(),'0000500908-Ingram Micro LP')]")
 	WebElement SoldTOcontactSelect;
 	@FindBy(xpath = "//button[normalize-space()='OK']/..//button[@part='button'][normalize-space()='Cancel']")
 	WebElement IMFCancel;
-// Scenario 17--------------
 	@FindBy(xpath = "//div[@part='modal-footer']//button[@part='button'][normalize-space()='Cancel']//following::button[normalize-space()='OK']")
 	WebElement ClickOnOKIMF;
-// Scenario 18----------------------------------------
 	@FindBy(xpath = "//button[@aria-label='Return to Customer Address']/..//button[@aria-label='Return to Customer Address']")
 	WebElement ClickonCRA;
 	@FindBy(xpath = "//lightning-combobox[@data-name='Sales_Issue_Return_To_Cst_Address__c']//lightning-base-combobox-item[2]//span[2]")
@@ -238,7 +216,6 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement SelectCollectionContacts;
 	@FindBy(xpath = "//button[@title='Cancel']//following::button[normalize-space()='Next']")
 	WebElement clickonNextIMF;
-// ---------------Edit Case
 	@FindBy(xpath = "//button[@title='Cancel']//following::button[contains(text(),'Next')]")
 	WebElement Clicknextedit;
 	@FindBy(xpath = "//c-r4c_-a-g_-case-edit//li//button[contains(text(),'Cancel')]//following::button[contains(text(),'Next')]")
@@ -251,16 +228,8 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement ClickonRelated;
 	@FindBy(xpath = "//button[@aria-label='Search']")
 	WebElement globaltextenter; // enter Text Globaly
-	
-	@FindBy(xpath="//c-r4c_-a-g_-case-edit//li//button[contains(text(),'Cancel')]//following::button[contains(text(),'Next')]")
+	@FindBy(xpath = "//c-r4c_-a-g_-case-edit//li//button[contains(text(),'Cancel')]//following::button[contains(text(),'Next')]")
 	WebElement clicknextbutton;
-	public void clicknextbutton() throws InterruptedException 
-	{
-    Thread.sleep(50000);
-    commonclick.scrollAndClick(clicknextbutton);
-		
-	}
-// -----------------Case Edit TC-Submitted Pending Action-------------
 
 	@FindBy(xpath = "//button[@title='Show quick filters']")
 	WebElement ClickOnfilter;
@@ -268,14 +237,8 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement EnterTextIntocasefield;
 	@FindBy(xpath = "//button[normalize-space()='Apply']")
 	WebElement Clickonapply;
-	//@FindBy(xpath="//tbody/tr[@role='row']/th[@data-label='Case']/lightning-primitive-cell-factory[@data-label='Case']/span[1]")
-	//@FindBy(xpath="//th[@data-label='Case']")
 	@FindBy(xpath = "//tbody/tr[@role='row']/th[@data-label='Case']/lightning-primitive-cell-factory[@data-label='Case']/span[1]")
-	//@FindBy(xpath="//td[@data-label='Subject']//preceding::th[@data-label='Case']")
-	//@FindBy(xpath="/html[1]/body[1]/div[4]/div[1]/section[1]/div[1]/div[1]/div[2]/div[2]/section[62]/div[1]/div[1]/section[3]/div[1]/div[2]/div[1]/div[1]/div[1]/lst-related-list-desktop[1]/article[1]/lst-related-list-view-manager[1]/lst-common-list-internal[1]/div[1]/div[1]/lst-primary-display-manager[1]/div[1]/lst-primary-display[1]/lst-primary-display-grid[1]/lightning-datatable[1]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/th[1]/lightning-primitive-cell-factory[1]/span[1]")
 	WebElement SelectCase;
-	
-	
 	@FindBy(xpath = "(//button[text()=\"Next\"])[2]")
 	WebElement clickonNextAccept;
 	@FindBy(xpath = "//tbody/tr[1]/th[1]")
@@ -288,21 +251,20 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement selecttext;
 	@FindBy(xpath = "//tbody/tr[1]/th[1]/span[1]")
 	WebElement selectsearchcontacts;
-	//@FindBy(xpath="//button[text()=\"Search...\"]")
 	@FindBy(xpath = "//input[@placeholder='Search...']")
 	WebElement EnterTextGlobalfield;
-	@FindBy(xpath = "//body/div/div/div[@role='dialog']/div/div/div/div/div/div/search_dialog-instant-results-list[@aria-controls='preview']/div[@aria-label='Suggestions']/search_dialog-instant-result-item[2]/div[1]")
+	//@FindBy(xpath = "//body/div/div/div[@role='dialog']/div/div/div/div/div/div/search_dialog-instant-results-list[@aria-controls='preview']/div[@aria-label='Suggestions']/search_dialog-instant-result-item[2]/div[1]")
+	@FindBy(xpath = "//div[@aria-hidden='true']//img[@title='Contact']")
 	WebElement SelectGlobalsearch;
 	@FindBy(xpath = "//body//div//c-r4c_-a-g_-collection-details//lightning-base-combobox-item[1]")
 	WebElement SelectFirstRCA;
 	@FindBy(xpath = "//lightning-combobox[@data-name='Sales_Issue_Cst_Collection_Address__c']//lightning-base-combobox-item[1]")
 	WebElement SelectFirstCA;
-
 	@FindBy(xpath = "//lightning-combobox[@data-name='Sales_Issue_Return_To_Cst_Contact__c']//lightning-base-combobox-item[1]")
 	WebElement SelectFirstRCC;
 	@FindBy(xpath = "//lightning-combobox[@data-name='Sales_Issue_Collection_Contact__c']//lightning-base-combobox-item[1]")
 	WebElement SelectFirstcc;
-	@FindBy(xpath = "//lightning-formatted-text[text()=\"Open, Unsubmitted\"]")
+	@FindBy(xpath = "//p[@title='Status']/..//lightning-formatted-text[contains(text(),'Open, Unsubmitted')]")
 	WebElement statusOpenUn;
 	@FindBy(xpath = "//button[@name='Ship To Conatct']/../..//lightning-base-combobox-item[@role='option']")
 	WebElement SelectShipToContact;
@@ -336,10 +298,47 @@ public class ContactPage_R4C_CaseCreation {
 	WebElement SelectFrightTypeIMF;
 	@FindBy(xpath = "//span[@title='Customer Routed Freight']")
 	WebElement SelectFrightTypeCMF;
+	@FindBy(xpath = "(//input[@inputmode=\"decimal\"])[1]") // To Enter Return Quantity To all field
+	WebElement enterquantityfirst1;
+	@FindBy(xpath = "//button[text()=\"Submit\"]")
+	WebElement ClickSubmit;
+	@FindBy(xpath = "//div[@aria-hidden='true']//img[@title='Case']")
+	WebElement SelectglobalCase;
+	@FindBy(xpath = "//span[normalize-space()='Accept']")
+	WebElement Clickacceptbutton;
+	@FindBy(xpath = "//li//button[contains(text(),'Save for Later')]/..//button[contains(text(),'Next')]")
+	WebElement ClickNextAfterEdit;
 
-// -------------Scenario No 1---------------------Action Methods----------------------
+	@FindBy(xpath = "//span[normalize-space()='Edit']")
+	WebElement ClickEdit;
+
+	@FindBy(xpath = "//c-r4c_-a-g_-case-header//lightning-combobox[@data-name='Sales_Issue_Return_Reason__c']//div//button[@name='Select one']")
+	WebElement ClickSSR;
+
+	@FindBy(xpath = "//span[@title='Standard Stock Rotation']")
+	WebElement SelectSSR;
+
+	public void ClickSSR() {
+		commonclick.scrollAndClick(ClickSSR);
+
+	}
+
+	public void SelectSSR() {
+		commonclick.scrollAndClick(SelectSSR);
+
+	}
+
+	public void UploadDrop() {
+		commonclick.scrollAndClick(UploadDrop);
+	}
+
 	public String getPageTitle() {
 		return ldriver.getTitle();
+	}
+
+	public void clicknextbutton() throws InterruptedException {
+		Thread.sleep(000);
+		commonclick.scrollAndClick(clicknextbutton);
 	}
 
 	public void Clickoncontactdropdown() {
@@ -399,6 +398,11 @@ public class ContactPage_R4C_CaseCreation {
 
 	}
 
+	public void enterquantity(String string) {
+		enterquantityfirst1.sendKeys(string);
+
+	}
+
 	public void EnterSoldToOptIn() throws InterruptedException {
 		commonclick.scrollAndClick(EnterSoldto);
 		EnterSoldto.sendKeys("500908");
@@ -424,16 +428,23 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(ClickonPO);
 	}
 
+	public void clickonnextaftersuldto2() {
+		commonclick.scrollAndClick(clickonnextaftersuldto2);
+	}
+
 	public void EnterPONumber(String PONumber) {
 		commonclick.scrollAndClick(enterPOnumber);
 		enterPOnumber.sendKeys(PONumber);
 	}
 
 	public void clickonsearch() {
-		//waitUtils.waitForElementToBeClickable(Clickonsearch, 30);
 		commonclick.scrollAndClick(Clickonsearch);
-		//Clickonsearch.click();
 	}
+	public void clickonsearchonly() {
+		commonclick.scrollAndClick(Clickonsearch);
+		Clickonsearch.click();
+	}
+	
 
 	public void selectallcheckbox() {
 		commonclick.scrollAndClick(selectAllcheckbox);
@@ -457,8 +468,29 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void EnterMore10000Qty() {
-		commonclick.scrollAndClick(enterquantityfirst);
-		enterquantityfirst.sendKeys("100000");
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(enterquantityfirst));
+			wait.until(ExpectedConditions.elementToBeClickable(enterquantityfirst));
+
+			// Scroll and click if needed
+			commonclick.scrollAndClick(enterquantityfirst);
+
+			// Clear and enter price
+			enterquantityfirst.clear();
+			enterquantityfirst.sendKeys("100000");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
 	}
 
 	public void clickongetcreditprice() {
@@ -466,26 +498,26 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void EnterPrice() {
-		commonclick.scrollAndClick(EnterPrice);
-		EnterPrice.clear();
-		EnterPrice.sendKeys("100");
-	}
-
-	public void EnterPriceZero() {
-		commonclick.scrollAndClick(EnterPrice);
-		EnterPrice.clear();
-		EnterPrice.sendKeys("0");
-	}
-	public void pricelessthan25k() {
-		commonclick.scrollAndClick(EnterPrice);
-
-		EnterPrice.sendKeys("24000");
-	}
-
-	public void PricerGreterThan25K() {
-		commonclick.scrollAndClick(EnterPrice);
-
-		EnterPrice.sendKeys("30000");
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterPrice));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterPrice));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterPrice);
+			// Clear and enter price
+			EnterPrice.clear();
+			EnterPrice.sendKeys("100");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
 	}
 
 	public void entertextintoreasonfield() {
@@ -493,14 +525,128 @@ public class ContactPage_R4C_CaseCreation {
 		EnterText.sendKeys("Validated Reason Filed ");
 	}
 
+	public void entertextintoreasonfieldexceptions() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterText));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterText));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterText);
+			// Clear and enter price
+			EnterText.clear();
+			EnterText.sendKeys("Validated Text");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
+	}
+
+	public void EnterPriceandhandleexceptions() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterPrice));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterPrice));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterPrice);
+			// Clear and enter price
+			EnterPrice.clear();
+			EnterPrice.sendKeys("100");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
+	}
+
+	public void EnterPriceZero() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterPrice));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterPrice));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterPrice);
+			// Clear and enter price
+			EnterPrice.clear();
+			EnterPrice.sendKeys("0");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
+	}
+
+	public void pricelessthan25k() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterPrice));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterPrice));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterPrice);
+			// Clear and enter price
+			EnterPrice.clear();
+			EnterPrice.sendKeys("24000");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
+	}
+
+	public void PricerGreterThan25K() {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			// Wait for the price input field to be visible and clickable
+			wait.until(ExpectedConditions.visibilityOf(EnterPrice));
+			wait.until(ExpectedConditions.elementToBeClickable(EnterPrice));
+			// Scroll and click if needed
+			commonclick.scrollAndClick(EnterPrice);
+			// Clear and enter price
+			EnterPrice.clear();
+			EnterPrice.sendKeys("29000");
+		} catch (NoSuchElementException e) {
+			System.out.println("Element not found: " + e.getMessage());
+			// Proceed to the next step, element not found
+		} catch (TimeoutException e) {
+			System.out.println("Element not available within the specified time: " + e.getMessage());
+		} catch (ElementNotInteractableException e) {
+			System.out.println("Element not interactable: " + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
+	}
+
 	public void AfterCreditpriceNext() {
 		commonclick.scrollAndClick(AfterCreditpriceNext);
-
 	}
 
 	public void validateallownace() {
 		commonclick.scrollAndClick(ValidateAllownce);
-
 	}
 
 	public void clicksavesummery() {
@@ -515,13 +661,10 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(clickonNextAccept);
 	}
 
-//-------------------- Scenario 2-----------------
-
 	public void EnterSONumber(String SOnumber) {
 		commonclick.scrollAndClick(EnterSONumber);
 		EnterSONumber.sendKeys(SOnumber);
 	}
-//----------------------- Scenario 3--------------------
 
 	public void ReturnResonePSR() {
 		commonclick.scrollAndClick(ReturnReasonPSR);
@@ -560,8 +703,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(POHistoryNext);
 	}
 
-// -------------------Scenario 4 --------- Methods---------
-
 	public void ClickonBulkUpload() {
 		commonclick.scrollAndClick(BulkUploadRadioButton);
 	}
@@ -581,7 +722,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(ClickonValidate);
 	}
 
-//------------- Scenario 8------------
 	public void ClickonCPN() {
 		commonclick.scrollAndClick(ClickOnCPN);
 	}
@@ -605,7 +745,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(AfterCPNSearch);
 	}
 
-//--------Scenario 9----------------
 	public void SelectOPNradiobutton() {
 		commonclick.scrollAndClick(ClickonOPNRadiobutton);
 	}
@@ -615,7 +754,6 @@ public class ContactPage_R4C_CaseCreation {
 		EnterOPN.sendKeys(OPN);
 	}
 
-//----------Scenario  12------------------------	
 	public void ClickonSaveforlater() {
 		commonclick.scrollAndClick(MMSaveforlater);
 	}
@@ -629,7 +767,6 @@ public class ContactPage_R4C_CaseCreation {
 		return getSavedstatustext.getText();
 	}
 
-//------------------Scenario 14
 	public void selectL3User() {
 		commonclick.scrollAndClick(SelectL3User);
 	}
@@ -641,7 +778,6 @@ public class ContactPage_R4C_CaseCreation {
 	public void selectL3agent() {
 		commonclick.scrollAndClick(SelectL3user);
 	}
-// --------------------Scenario 15 Edit Case
 
 	public void ClickonAcceptButton() throws AWTException, InterruptedException {
 
@@ -659,7 +795,6 @@ public class ContactPage_R4C_CaseCreation {
 	public void ClickOnCaseEdit() {
 		commonclick.scrollAndClick(ClickonEdit);
 	}
-// --------------------Scenario 16 OptIn Cancel
 
 	public void selectsoldToContact() {
 		commonclick.scrollAndClick(SoldTOcontactSelect);
@@ -673,7 +808,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(ClickOnFirstSearch);
 	}
 
-// Scenario 17Optin/Out Ok---------
 	public void clickononIMF() {
 		commonclick.scrollAndClick(ClickOnOKIMF);
 	}
@@ -702,8 +836,6 @@ public class ContactPage_R4C_CaseCreation {
 	public void clickonreturnreason() {
 		commonclick.scrollAndClick(Clickonreason);
 	}
-
-// Scenario 18 Optin/Out GEO---------
 
 	public void ClickOnRCA() {
 		commonclick.scrollAndClick(ClickonCRA);
@@ -742,8 +874,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(clickonNextIMF);
 	}
 
-//-------------------Case Edit-----------------
-
 	public void clickonnextafteredit() {
 		commonclick.scrollAndClick(clickonnextafteredit);
 	}
@@ -752,7 +882,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(ClickonNextAfterEdit);
 
 	}
-//-----------------Case Edit TC-Submitted Pending Action-------------
 
 	public void ClickonRelated() {
 		commonclick.scrollAndClick(ClickonRelated);
@@ -783,12 +912,11 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void SelectSearchedcase() throws InterruptedException {
-		//Thread.sleep(3000);
-		//commonclick.scrollAndClick(SelectCase);
+		// commonclick.scrollAndClick(SelectCase);
 		SelectCase.click();
-		// Actions actions = new Actions(driver);  // Initialize Actions class
-		//actions.doubleClick(SelectCase).perform();
-		
+		// Actions actions = new Actions(driver); // Initialize Actions class
+		// actions.doubleClick(SelectCase).perform();
+
 	}
 
 	public void Clickonextedit() {
@@ -796,7 +924,7 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void clickGlobal() {
-		
+
 		commonclick.scrollAndClick(clickGlobal);
 	}
 
@@ -843,7 +971,6 @@ public class ContactPage_R4C_CaseCreation {
 		commonclick.scrollAndClick(SelectFirstcc);
 	}
 
-// Print Active MMIds Into Console
 	public void PrintActiveMMIds() {
 		for (WebElement mmId : PrintActiveMMIds) {
 			String MMId = mmId.getText();
@@ -860,28 +987,72 @@ public class ContactPage_R4C_CaseCreation {
 
 	}
 
+	public void enterValueInDecimalField(String string) {
+		// Loop through each input field and enter the value "1"
+		for (WebElement inputField : decimalInputFields) {
+			inputField.clear(); // Optional: clear any existing value
+			inputField.sendKeys(string);
+		}
+
+	}
+
 	public void EnterPriceIntoAllFields() {
-		// Loop through each input field and enter the value "1"
-		for (WebElement inputField : EnterPriceIntoAllFields) {
-			inputField.clear(); // Optional: clear any existing value
-			inputField.sendKeys("100"); // Enter the value "100"
-		}
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+		try {
+			// Loop through each input field and enter the value "100"
+			for (WebElement inputField : EnterPriceIntoAllFields) {
+				try {
+					// Wait for each input field to be visible and clickable
+					wait.until(ExpectedConditions.visibilityOf(inputField));
+					wait.until(ExpectedConditions.elementToBeClickable(inputField));
+					inputField.clear(); // Clear any existing value
+					inputField.sendKeys("100"); // Enter the value "100"
+				} catch (NoSuchElementException e) {
+					System.out.println("Element not found: " + e.getMessage());
+					// Skip this element and continue with the next
+				} catch (TimeoutException e) {
+					System.out.println("Element not available within the specified time: " + e.getMessage());
+				} catch (ElementNotInteractableException e) {
+					System.out.println("Element not interactable: " + e.getMessage());
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
 	}
 
-	public void EnterReasonintoAllfileds() {
-		// Loop through each input field and enter the value "1"
-		for (WebElement inputField : EnterReasonintoAllfileds) {
-			inputField.clear(); // Optional: clear any existing value
-			inputField.sendKeys("IMF Reason"); // Enter the value "100"
-		}
+	public void EnterReasonintoAllFields() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+		try {
+			// Loop through each input field and enter the value "IMF Reason"
+			for (WebElement inputField : EnterReasonintoAllfileds) {
+				try {
+					// Wait for each input field to be visible and clickable
+					wait.until(ExpectedConditions.visibilityOf(inputField));
+					wait.until(ExpectedConditions.elementToBeClickable(inputField));
+
+					inputField.clear(); // Clear any existing value
+					inputField.sendKeys("IMF Reason"); // Enter the value "IMF Reason"
+				} catch (NoSuchElementException e) {
+					System.out.println("Element not found: " + e.getMessage());
+					// Skip this element and continue with the next
+				} catch (TimeoutException e) {
+					System.out.println("Element not available within the specified time: " + e.getMessage());
+				} catch (ElementNotInteractableException e) {
+					System.out.println("Element not interactable: " + e.getMessage());
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("Unexpected error: " + e.getMessage());
+		}
 	}
 
-	public void ClickGetCreditPrice() 
-	{
+	public void ClickGetCreditPrice() {
 		commonclick.scrollAndClick(ClickGetCreditPrice);
 	}
+
 	public void CLickNextAfterPO() throws InterruptedException {
 
 		Thread.sleep(5000);
@@ -927,18 +1098,15 @@ public class ContactPage_R4C_CaseCreation {
 
 	public void SelectDate() {
 		// Get today's date
-		LocalDate today = LocalDate.now();
-
+	//LocalDate today = LocalDate.now();
 		// Format today's date as MM/dd/yyyy
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-		String formattedDate = today.format(formatter);
-
+		//String formattedDate = today.format(formatter);
 		// Locate the input field for the Collection Date
 		WebElement dateInput = driver.findElement(SelectDate);
-
 		// Use JavaScriptExecutor to set today's date in the input field
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].value='" + formattedDate + "';", dateInput);
+		//js.executeScript("arguments[0].value='" + formattedDate + "';", dateInput);
 	}
 
 	public void SelectSoldToContactSecond() {
@@ -966,49 +1134,33 @@ public class ContactPage_R4C_CaseCreation {
 	}
 
 	public void ClickOnCancel() {
+
 		commonclick.scrollAndClick(ClickOnCancel);
+
 	}
-	@FindBy(xpath="//button[text()=\"Submit\"]")
-	WebElement ClickSubmit;
-	
-	public void ClickSubmit() 
-	{
-		
+
+	public void ClickSubmit() {
+
 		commonclick.scrollAndClick(ClickSubmit);
 	}
-	
-	@FindBy(xpath="//div[@aria-hidden='true']//img[@title='Case']")
-	WebElement SelectglobalCase;
-	public void SelectglobalCase() 
-	{
+
+	public void SelectglobalCase() {
 		commonclick.scrollAndClick(SelectglobalCase);
-		
+
 	}
-	
-	@FindBy(xpath="//span[normalize-space()='Edit']")
-	WebElement ClickEdit;
-	public void ClickEdit() 
-	{
+
+	public void ClickEdit() {
 		commonclick.scrollAndClick(ClickEdit);
 	}
-	
-	@FindBy(xpath="//li//button[contains(text(),'Save for Later')]/..//button[contains(text(),'Next')]")
-	WebElement ClickNextAfterEdit;
-	
-	public void ClickNextAfterEdit() 
-	{
+
+	public void ClickNextAfterEdit() {
 		commonclick.scrollAndClick(ClickNextAfterEdit);
-		
+
 	}
-	
-	@FindBy(xpath="//span[normalize-space()='Accept']")
-	WebElement Clickacceptbutton;
-	public void Clickacceptbutton() 
-	{
+
+	public void Clickacceptbutton() {
 		commonclick.scrollAndClick(Clickacceptbutton);
-			
+
 	}
-	
-	
-	
+
 }

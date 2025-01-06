@@ -1,6 +1,6 @@
 Feature:StockRotation Case Edit
- @TestCaseNo1
-@Sanity
+ @TestCaseSRCENo1
+@SanitySRCE
 Scenario: Verify the Open Unsubmitted status Case Edit for Stock Rotation 
    Given User Launch Chrome browser
    When User open URL 
@@ -36,8 +36,8 @@ Scenario: Verify the Open Unsubmitted status Case Edit for Stock Rotation
    And Print Case No into Console
    And Close browser
    
- @TestCaseNo2
- @Sanity
+ @TestCaseSRCENo2
+ @SanitySRCE
   Scenario: Verify the Submitted Pending Approval status Case Edit for Stock Rotation    
     Given User Launch Chrome browser
    When User open URL 
@@ -74,8 +74,8 @@ Scenario: Verify the Open Unsubmitted status Case Edit for Stock Rotation
    And Click on submit button After Summary
    And Close browser
    
- @TestCaseNo3
- @Sanity
+ @TestCaseSRCENo3
+ @SanitySRCE
   Scenario: Verify the Submitted Pending Action status Case Edit for Stock Rotation     
    Given User Launch Chrome browser
    When User open URL 
@@ -98,8 +98,9 @@ Scenario: Verify the Open Unsubmitted status Case Edit for Stock Rotation
    #And Click on the Save and Summary button
    And Click on submit button After Summary
     
-@Status-pass
-Scenario: Open, Unsubmitted
+@TestCaseSRCENo4
+@SanitySRCE
+Scenario: Verify the Submitted Pending Approval status Case Edit for Technical
   Given User Launch Chrome browser
    When User open URL 
    Then User Enter Email Address and pass PassWord
@@ -116,7 +117,7 @@ Scenario: Open, Unsubmitted
    And Click on next button
    And Click on next button
    
- # When Click on Next After PO history check
+  #When Click on Next After PO history check
   #And Clickon PO History check button
   #And Click on Product Validation and Next button
       #When Enter Return Quantity
@@ -125,9 +126,7 @@ Scenario: Open, Unsubmitted
       #And Click on the Validate Allowance
       #And Click on the Save and Summary button
       #And Click on submit button After Summary
-   
-   
-  #And Click on submit button After Summary
+      #And Click on submit button After Summary
     
     
     
