@@ -23,7 +23,7 @@ public class LoginPage extends Baseclass1 {
 	public CommonUtils commonclick;
 
 
-	// private WebDriver rdriver;
+	    //private WebDriver rdriver;
 	public LoginPage(WebDriver rdriver) {
 		// Assign the passed WebDriver instance to the class variable
 		ldriver = rdriver;
@@ -34,9 +34,14 @@ public class LoginPage extends Baseclass1 {
         commonclick = new CommonUtils(ldriver);
 
 	}
-
+	/*
+	 *  Authur: Omkar Yadav
+	 *  Change:LogInpage Case Creation
+	 *  Description:
+	 */
+	
 	@FindBy(xpath = "//input[@id=\"username\"]")
-	WebElement textEmail; // TO Enter Email id into text field
+	WebElement textEmail;    // TO Enter Email id into text field
 	@FindBy(xpath = "//input[@id=\"password\"]")
 	WebElement textPassword; // To Enter Password into Text field
 	@FindBy(xpath = "//input[@id=\"Login\"]")
@@ -53,26 +58,19 @@ public class LoginPage extends Baseclass1 {
 	WebElement loginButton;
 
 	public void SetUserName(String uname) {
-		//waitUtils.waitForElementToBeClickable(textEmail, 30);
 		commonclick.scrollAndClick(textEmail);
-
 		textEmail.sendKeys(uname);
 	}
 
 	public void SetPassword(String Password) {
-	//	waitUtils.waitForElementToBeClickable(textPassword, 30);
 		commonclick.scrollAndClick(textPassword);
-
 		textPassword.sendKeys(Password);
 	}
 
 	public void Clickonlogin() {
-		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//wait.until(ExpectedConditions.elementToBeClickable(Clickonlogin));
-		//waitUtils.waitForElementToBeClickable(Clickonlogin, 30);
-		commonclick.scrollAndClick(Clickonlogin);
+		//commonclick.scrollAndClick(Clickonlogin);
+		commonclick.ClickByView(Clickonlogin);
 
-		//Clickonlogin.click();
 	}
 
 	public void clickonmenuicon() {
@@ -94,24 +92,15 @@ public class LoginPage extends Baseclass1 {
 	}
 
 	public void clickLogin() {
-		//waitUtils.waitForElementToBeClickable(loginButton, 30);
 		commonclick.scrollAndClick(loginButton);
 
-		//loginButton.click();
 	}
 public void enterCredentialsAndLogin() throws Exception {
         String decryptedUsername = getDecryptedUsername();
         String decryptedPassword = getDecryptedPassword();
- 
-        // Mask the entered credentials with asterisks on the webpage (if you want to simulate)
-       // String maskedPassword = decryptedPassword.replaceAll(".", "*");
- 
-        // Enter username and password
         emailField.sendKeys(decryptedUsername);
         passwordField.sendKeys(decryptedPassword); // Use masked password for display
  
-        // Click login
-       // loginButton.click();
     }
 	
 	

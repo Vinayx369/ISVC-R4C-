@@ -1,7 +1,7 @@
  Feature: Case Edit Technical
  
- @TestCaseNo-3-Pass
- 
+ @TestCaseTCENo1
+ @SanityTCE
  Scenario: Verify the Open Unsubmitted status Case Edit for Technical with Freight type as CRF
    Given User Launch Chrome browser
    When User open URL 
@@ -38,8 +38,8 @@
    
      
      
-@TestCaseNo-4-Pass
-
+@TestCaseTCENo2
+@SanityTCE
 Scenario: Verify the Open Unsubmitted status Case Edit for Technical with Freight type as IMF
   Given User Launch Chrome browser
    When User open URL 
@@ -74,8 +74,8 @@ Scenario: Verify the Open Unsubmitted status Case Edit for Technical with Freigh
     And Close browser
     
          
-@TestCaseNo5
-
+@TestCaseTCENo3
+@SanityTCE
 Scenario: Verify the Submitted Pending Action status Case Edit for Technical 
  Given User Launch Chrome browser
    When User open URL 
@@ -98,8 +98,8 @@ Scenario: Verify the Submitted Pending Action status Case Edit for Technical
     And Close browser
    
 
-@TestCaseNo-6-Pass
-
+@TestCaseTCENo4
+@SanityTCE
 Scenario: Verify the Submitted Pending Approval status Case Edit for Technical  
   Given User Launch Chrome browser
    When User open URL 
@@ -132,9 +132,8 @@ Scenario: Verify the Submitted Pending Approval status Case Edit for Technical
    And Click on submit button After Summary
    And Close browser
     
- 
- 
-@Status-pass
+@TestCaseTCENo5
+@SanityTCE
 Scenario: Pending Approval Status {Verify the Submitted Pending Approval status Case Edit for Technical}
   Given User Launch Chrome browser
    When User open URL 

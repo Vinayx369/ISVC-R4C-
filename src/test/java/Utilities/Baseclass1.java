@@ -6,7 +6,7 @@ public class Baseclass1 {
 
     public String getDecryptedUsername() throws Exception {
         Properties prop = new Properties();
-        FileInputStream file = new FileInputStream("C:\\Users\\oyadavx\\git\\Intel_ISVC_R4C\\Intel_ISVC_R4C\\src\\test\\java\\configCred.properties");
+        FileInputStream file = new FileInputStream("C:\\Users\\VGANJIX\\OneDrive - Intel Corporation\\Documents\\Vinay\\Automation Practice\\Intel_ISVC\\Intel_ISVC_R4C\\src\\test\\java\\configCred.properties");
         prop.load(file);
 
         String encryptedUsername = prop.getProperty("username");
@@ -15,7 +15,7 @@ public class Baseclass1 {
 
     public String getDecryptedPassword() throws Exception {
         Properties prop = new Properties();
-        FileInputStream file = new FileInputStream("C:\\Users\\oyadavx\\git\\Intel_ISVC_R4C\\Intel_ISVC_R4C\\src\\test\\java\\configCred.properties");
+        FileInputStream file = new FileInputStream("C:\\Users\\VGANJIX\\OneDrive - Intel Corporation\\Documents\\Vinay\\Automation Practice\\Intel_ISVC\\Intel_ISVC_R4C\\src\\test\\java\\configCred.properties");
         prop.load(file);
 
         String encryptedPassword = prop.getProperty("password");

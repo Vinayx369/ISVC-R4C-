@@ -10,7 +10,7 @@ public class FaildRunner {
 			dryRun=false,
 			monochrome = true, 
 			plugin = {"pretty", "html:target/cucumber-reports.html", "junit:target/cucumber.xml",
-					"rerun:target/faildrerun.txt"} )
+					"rerun:target/faildrerun.txt", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"} )
 			public class CucumberTest extends AbstractTestNGCucumberTests {
 			}
 

@@ -1,69 +1,81 @@
 Feature: R4C Case Save For Later
-@TestCaseNo1
-@Sanity
+@TestCaseSRSFLNo1
+@SanitySRSFL
  Scenario: Verify the Save for Later functionality in Request Header details
    Given User Launch Chrome browser
    When User open URL 
    Then User Enter Email Address and pass PassWord
-   And Click on login
-   And Enter text global and select "Sarah Aggelidis"
-   And Click on the New R4C case creation button
-   And Select Service Type SR and Click on Create buttons and Enter Sold To "6006683685"
-   And Select Remedy credit and reason SSR  
-   And Select RCA CMF Type address
-   And Select Return customer contact
-   And Select CA Address
-   When select Collection Contact
+   And Click on login 
+    And Enter text global excel
+    And Click on the New R4C case creation button
+    And Select Service Type SR and Click create button enter Sold through Excel file
+   And Select All other details
+   And Select Ship To contact
+   And Select credit
+   And Select Promotional Stock option
+   And Select RCA address first
+    And Select Return customer contact first
+    And Select CA Address first
+    When select Collection Contact first
    When Click on Save for later button
    And Check Status Open Unsubmitted
    And Print Case No into Console SR
    And Close browser
    
    
- @TestCaseNo2
- @Sanity
+ @TestCaseSRSFLNo2
+ @SanitySRSFL
  Scenario: Verify the Save for Later functionality Search/Upload Line item page
-   Given User Launch Chrome browser
+ Given User Launch Chrome browser
    When User open URL 
-   And User Enter Email Address and pass PassWord
-   And Click on login
-   And Enter text global and select "Sarah Aggelidis"
-   And Click on the New R4C case creation button
-   And Select Service Type SR and Click on Create buttons and Enter Sold To "6006683685"
-   And Select Remedy credit and reason SSR 
-   And Select RCA CMF Type address
-   And Select Return customer contact
-   And Select CA Address
-   When select Collection Contact
+   Then User Enter Email Address and pass PassWord
+   And Click on login 
+    And Enter text global excel
+    And Click on the New R4C case creation button
+    And Select Service Type SR and Click create button enter Sold through Excel file
+   And Select All other details
+   And Select Ship To contact
+   And Select credit
+   And Select Promotional Stock option
+   And Select RCA address first
+   And Select Return customer contact first
+   And Select CA Address first
+   When select Collection Contact first
    And Click on next
-   When Clickon Product radiobutton and enter MM Number "99APD4"
+   And Enter MMIDs By using Excel Sheet
    And Click on search button after Entering MM Number 
-   And Clickon PO History button
+   When Select ALL     
+   And Clickon PO History
+   And Click on Product Validation
    When Click on Save for later button
    And Check Status Open Unsubmitted
    And Print Case No into Console SR
    And Close browser
 
- @TestCaseNo3
- @Sanity
+ @TestCaseSRSFLNo3
+ @SanitySRSFL
  @highPriority
  Scenario: Verify the Save for Later functionality Product Validation page
    Given User Launch Chrome browser
    When User open URL 
-   And User Enter Email Address and pass PassWord
-   And Click on login
-   And Enter text global and select "Sarah Aggelidis"
-   And Click on the New R4C case creation button
-   And Select Service Type SR and Click on Create buttons and Enter Sold To "6006683685"
-   And Select Remedy credit and reason SSR 
-   And Select RCA CMF Type address
-   And Select Return customer contact
-   And Select CA Address
-   When select Collection Contact
+   Then User Enter Email Address and pass PassWord
+   And Click on login 
+    And Enter text global excel
+    And Click on the New R4C case creation button
+    And Select Service Type SR and Click create button enter Sold through Excel file
+   And Select All other details
+   And Select Ship To contact
+   And Select credit
+   And Select Promotional Stock option
+   And Select RCA address first
+    And Select Return customer contact first
+    And Select CA Address first
+    When select Collection Contact first
    And Click on next
-   When Clickon Product radiobutton and enter MM Number "99APD4"
-   And Click on search button after Entering MM Number 
-   And Clickon PO History 
+    And Enter MMIDs By using Excel Sheet
+   And Click on search button after Entering MM Number
+   When Select ALL      
+   And Clickon PO History
    And Click on Product Validation 
   When Click on Save for later button
    And Check Status Open Unsubmitted
@@ -72,28 +84,32 @@ Feature: R4C Case Save For Later
    
   
    
-@TestCaseNo4
-@Sanity
+@TestCaseSRSFLNo4
+@SanitySRSFL
 @highPriority
- Scenario: Verify the Case creation for Service Type as Technical with ULT is not mandatory
-  Given User Launch Chrome browser
+ Scenario: Verify the Save for Later functionality Credit Price Validation page
+ Given User Launch Chrome browser
    When User open URL 
-   And User Enter Email Address and pass PassWord
-   And Click on login
-   And Enter text global and select "Sarah Aggelidis"
-   And Click on the New R4C case creation button
-   And Select Service Type SR and Click on Create buttons and Enter Sold To "6006683685"
-   And Select Remedy credit and reason SSR 
-   And Select RCA CMF Type address
-   And Select Return customer contact
-   And Select CA Address
-   When select Collection Contact
+   Then User Enter Email Address and pass PassWord
+   And Click on login 
+    And Enter text global excel
+    And Click on the New R4C case creation button
+    And Select Service Type SR and Click create button enter Sold through Excel file
+   And Select All other details
+   And Select Ship To contact
+   And Select credit
+   And Select Promotional Stock option
+   And Select RCA address first
+    And Select Return customer contact first
+    And Select CA Address first
+    When select Collection Contact first
    And Click on next
-   When Clickon Product radiobutton and enter MM Number "99APD4"
-   And Click on search button after Entering MM Number 
+    And Enter MMIDs By using Excel Sheet
+   And Click on search button after Entering MM Number  
+   When Select ALL    
    And Clickon PO History 
    And Click on Product Validation and Next button
-   When Enter Return Quantity
+   When Enter Quantity into All fields through excel
    And Click on the Get credit price
    When Click on Save for later button
    And Check Status Open Unsubmitted

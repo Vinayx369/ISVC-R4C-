@@ -154,7 +154,7 @@ Scenario Outline: Verify the MMIDs-(ULT-Not-Mandatory)IMF Bulk Upload functional
  Examples:
   | ContactName          | SoldToNumber  | MMID                                              | ULT|PO|SO|OPN|CPN|CIRS|
   | Sarah Aggelidis      | 6006683685    | 99C6A3,99C6A7,99C4X0,99C4XD,99C4XK                |    |  |   |  |   |    |      
- # | Neetha Bhavana       |6100083674     |99AH6A,925133,99A038,948141,99AG49                 |
+ #| Neetha Bhavana       |6100083674     |99AH6A,925133,99A038,948141,99AG49                 |
  #| Amy Adamo            | 000024100     | 99CFXV,999C38                                     |                                                                    
  #| Peter Lin            | 6100080611    | 999C38,999C39,99C5KG,99C5KG,999C38                |
 
